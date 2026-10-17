@@ -1,0 +1,8 @@
+*.apk
+*.jks
+*.keystore
+mapping.txt
+seeds.txt
+usage.txt
+local.properties
+node_modules/
