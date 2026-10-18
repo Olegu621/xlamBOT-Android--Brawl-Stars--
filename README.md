@@ -1,11 +1,12 @@
 # xlamBOT для Android
 
-**[Сайт и инструкция запуска](https://olegu621.github.io/xlamBOT-Android-downloads/)** · **[Скачать APK 1.0.15](https://github.com/Olegu621/xlamBOT-Android-downloads/releases/download/v1.0.15/xlamBOT.apk)** · **[Telegram @xlamModz](https://t.me/xlamModz)**
+**[Сайт и инструкция запуска](https://olegu621.github.io/xlamBOT-Android-downloads/)** · **[Скачать APK 1.0.16](https://github.com/Olegu621/xlamBOT-Android-downloads/releases/download/v1.0.16/xlamBOT.apk)** · **[Telegram @xlamModz](https://t.me/xlamModz)**
 
 Публичный репозиторий загрузок и сайта. Содержит APK в Releases, контрольные суммы и страницы помощи. Исходники Android-приложения здесь не публикуются.
 
 - Android 8.0+, ARM64 / ARMv7 / x86_64.
 - Три стиля игры, распознавание поля, движение, атаки, очередь бойцов и статистика.
+- Раздел Plus и бесплатная бета на 72 часа один раз на Telegram-аккаунт, без оплаты и автопродления. Пока проверяются подписка и привязка; фоновая игра и несколько экземпляров ещё недоступны, платные продажи закрыты.
 - На Android 11+ изображение игры получается через специальные возможности; на Android 8–10 нужен системный захват экрана.
 - Компьютер и root для обычной работы не нужны.
 - Кнопка «Закрыть» останавливает бота и убирает плавающее управление.
