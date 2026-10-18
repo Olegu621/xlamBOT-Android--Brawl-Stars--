@@ -1,6 +1,6 @@
 # xlamBOT для Android
 
-**[Сайт и инструкция запуска](https://olegu621.github.io/xlamBOT-Android-downloads/)** · **[Скачать APK 1.0.10](https://github.com/Olegu621/xlamBOT-Android-downloads/releases/download/v1.0.10/xlamBOT.apk)** · **[Telegram @xlamModz](https://t.me/xlamModz)**
+**[Сайт и инструкция запуска](https://olegu621.github.io/xlamBOT-Android-downloads/)** · **[Скачать APK 1.0.11](https://github.com/Olegu621/xlamBOT-Android-downloads/releases/download/v1.0.11/xlamBOT.apk)** · **[Telegram @xlamModz](https://t.me/xlamModz)**
 
 Публичный репозиторий загрузок и сайта. Содержит APK в Releases, контрольные суммы и страницы помощи. Исходники Android-приложения здесь не публикуются.
 
