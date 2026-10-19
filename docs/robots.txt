@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://olegu621.github.io/xlamBOT-Android-downloads/sitemap.xml
+Sitemap: https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/sitemap.xml

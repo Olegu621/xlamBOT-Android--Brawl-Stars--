@@ -1,6 +1,6 @@
 # xlamBOT для Android
 
-**[Сайт и инструкция запуска](https://olegu621.github.io/xlamBOT-Android-downloads/)** · **[Скачать APK 1.0.17](https://github.com/Olegu621/xlamBOT-Android-downloads/releases/download/v1.0.17/xlamBOT.apk)** · **[Telegram @xlamModz](https://t.me/xlamModz)**
+**[Сайт и инструкция запуска](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/)** · **[Скачать APK 1.0.17](https://github.com/Olegu621/xlamBOT-Android--Brawl-Stars--/releases/download/v1.0.17/xlamBOT.apk)** · **[Telegram @xlamModz](https://t.me/xlamModz)**
 
 Публичный репозиторий загрузок и сайта. Содержит APK в Releases, контрольные суммы и страницы помощи. Исходники Android-приложения здесь не публикуются.
 
@@ -12,7 +12,7 @@
 - Кнопка «Закрыть» останавливает бота и убирает плавающее управление.
 - Обновление — вручную: скачать новый APK и установить поверх предыдущего.
 
-После установки выключите и снова включите службу xlamBOT в специальных возможностях. Если появляется «Доступ для приложения запрещён», откройте на сайте [пошаговую инструкцию](https://olegu621.github.io/xlamBOT-Android-downloads/#restricted-settings).
+После установки выключите и снова включите службу xlamBOT в специальных возможностях. Если появляется «Доступ для приложения запрещён», откройте на сайте [пошаговую инструкцию](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/#restricted-settings).
 
 Сайт публикуется GitHub Pages из `main/docs`. Файлы приложения, ключи подписи и таблицы R8 в этот репозиторий не добавляются.
 
