@@ -1,19 +1,68 @@
-# xlamBOT для Android
+<div align="center">
 
-**[Сайт и инструкция запуска](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/)** · **[Скачать APK 1.0.17](https://github.com/Olegu621/xlamBOT-Android--Brawl-Stars--/releases/download/v1.0.17/xlamBOT.apk)** · **[Telegram @xlamModz](https://t.me/xlamModz)**
+# xlamBOT · Android
 
-Публичный репозиторий загрузок и сайта. Содержит APK в Releases, контрольные суммы и страницы помощи. Исходники Android-приложения здесь не публикуются.
+**Бот для Brawl Stars: выбирай стиль, составляй очередь и следи за результатом.**
 
-- Android 8.0+, ARM64 / ARMv7 / x86_64.
-- Три стиля игры, распознавание поля, движение, атаки, очередь бойцов и статистика.
-- Раздел Plus и бесплатная бета на 72 часа один раз на Telegram-аккаунт, без оплаты и автопродления. Пока проверяются подписка и привязка; новые функции Plus будут объявлены отдельно, платные продажи закрыты.
-- На Android 11+ изображение игры получается через специальные возможности; на Android 8–10 нужен системный захват экрана.
-- Компьютер и root для обычной работы не нужны.
-- Кнопка «Закрыть» останавливает бота и убирает плавающее управление.
-- Обновление — вручную: скачать новый APK и установить поверх предыдущего.
+[![Android 8+](https://img.shields.io/badge/Android-8%2B-3ddc84?logo=android&logoColor=white)](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/)
+[![Download APK](https://img.shields.io/badge/APK-1.1.0-8b5cf6)](https://github.com/Olegu621/xlamBOT-Android--Brawl-Stars--/releases/download/v1.1.0/xlamBOT.apk)
+[![Telegram](https://img.shields.io/badge/Telegram-%40xlamModz-26a5e4?logo=telegram&logoColor=white)](https://t.me/xlamModz)
 
-После установки выключите и снова включите службу xlamBOT в специальных возможностях. Если появляется «Доступ для приложения запрещён», откройте на сайте [пошаговую инструкцию](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/#restricted-settings).
+[**Скачать и настроить →**](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/) · [Что нового](https://github.com/Olegu621/xlamBOT-Android--Brawl-Stars--/releases/tag/v1.1.0) · [Сообщить об ошибке](https://github.com/Olegu621/xlamBOT-Android--Brawl-Stars--/issues/new/choose)
 
-Сайт публикуется GitHub Pages из `main/docs`. Файлы приложения, ключи подписи и таблицы R8 в этот репозиторий не добавляются.
+</div>
 
-Самостоятельный проект, не связанный с Supercell. Названия и изображения Brawl Stars принадлежат их правообладателям. Сведения о компонентах — в [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md).
+## Начать играть
+
+1. Скачай APK с сайта и установи поверх старой версии. История и настройки сохранятся.
+2. Включи службу xlamBOT в специальных возможностях. После обновления выключи и включи её снова.
+3. Подключи изображение игры, открой обычный Brawl Stars, выбери нужного бойца и запусти бота.
+
+Для первого запуска рекомендуем English в игре, стандартное управление и Trio Showdown — на этом режиме проверен полный цикл матчей.
+
+Android 11+: снимки через специальные возможности. Android 8–10: системный запрос захвата экрана. Root и постоянно подключённый компьютер не нужны.
+
+Если Android пишет «Доступ для приложения запрещён», смотри [инструкцию по ограниченным настройкам](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/#restricted-settings).
+
+## Free и Plus
+
+| Возможность | Free | Plus |
+| --- | :---: | :---: |
+| Три стиля, движение, атаки, базовое уклонение | ✓ | ✓ |
+| Очередь по целям и количеству матчей, статистика | ✓ | ✓ |
+| Усиленное уклонение и аимбот с упреждением | — | ✓ |
+| Прямой GPU / адаптивный NNAPI и режим 540p | — | ✓ |
+| Кусты с выходом при опасности, атака ящиков | — | ✓ |
+| Смена бойца после чистого прироста +N кубков | — | ✓ |
+| Редкие пины в спокойные моменты | — | ✓ |
+
+**Plus: 50 Telegram Stars / 30 дней, продление вручную.** Бесплатная бета — 72 часа один раз на Telegram-аккаунт, без оплаты и автосписаний. Подключи телефон через **xlamBOT → Plus → Telegram**, активируй доступ в [боте](https://t.me/xlambottt_bot?start=plus), затем нажми «Обновить доступ». Нужна версия 1.1.0 или новее.
+
+Ускорение выбирается после сравнения скорости и результатов распознавания. Прямой GPU работает через OpenCL/OpenGL; назначение NNAPI на NPU/GPU зависит от драйвера телефона. При ошибке или отсутствии выигрыша остаётся CPU. Снижение времени анализа не равно такому же росту FPS всей игры.
+
+Для автовыбора создай «Мою очередь» и включи переключатель в Plus: +N считается от подтверждённого счётчика в начале текущего захода, включая потери в поражениях. Состояние сохраняется после перезапуска.
+
+## Помоги с совместимостью
+
+Напиши в [комментариях Telegram](https://t.me/xlamModz) или [создай issue](https://github.com/Olegu621/xlamBOT-Android--Brawl-Stars--/issues/new/choose). Отзывы нужны и от тех, у кого всё работает.
+
+```text
+Телефон и процессор:
+Android и оболочка:
+Версия xlamBOT:
+Источник изображения / CPU, GPU или NNAPI:
+Боец и режим игры:
+Работает нормально / что случилось:
+Через сколько времени, как повторить:
+Последние строки журнала и короткое видео:
+```
+
+Не публикуй токены, пароли и платёжные данные. Список проверенных устройств пополняется по воспроизводимым проверкам; отзыв об одном телефоне не гарантирует работу на всех прошивках.
+
+## About this repository
+
+xlamBOT is an Android Brawl Stars automation app with screen recognition, three play styles, brawler queues and statistics. Download the APK from Releases; setup and support are available on the website and Telegram. This public repository hosts downloads, documentation and GitHub Pages. Android application source code, signing keys, crash symbols and raw model files are private.
+
+Обновление APK — вручную с сайта. Этот репозиторий не содержит автообновлятор.
+
+Самостоятельный проект, не связанный с Supercell. Названия и игровые изображения принадлежат правообладателям. [Сторонние компоненты](THIRD-PARTY-NOTICES.md).

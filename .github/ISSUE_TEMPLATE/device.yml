@@ -1,0 +1,29 @@
+name: Совместимость / ошибка
+description: Сообщи о проблеме или о телефоне, на котором всё работает
+title: "[Android] Модель телефона — краткое описание"
+body:
+  - type: input
+    id: device
+    attributes: {label: Телефон и процессор}
+    validations: {required: true}
+  - type: input
+    id: android
+    attributes: {label: Версия Android и оболочка}
+    validations: {required: true}
+  - type: input
+    id: version
+    attributes: {label: Версия xlamBOT}
+    validations: {required: true}
+  - type: dropdown
+    id: result
+    attributes:
+      label: Результат
+      options: [Работает нормально, Есть проблема]
+    validations: {required: true}
+  - type: textarea
+    id: reproduce
+    attributes: {label: Что происходит и как повторить, description: "Боец, режим игры, источник изображения, ускорение, через сколько времени случается."}
+    validations: {required: true}
+  - type: textarea
+    id: evidence
+    attributes: {label: Журнал и видео, description: "Последние строки журнала и короткая запись. Не публикуй пароли и токены."}
