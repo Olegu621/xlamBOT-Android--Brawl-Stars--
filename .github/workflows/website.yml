@@ -1,0 +1,23 @@
+name: Website checks
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - name: Regenerate public guides
+        run: python3 tools/build_guides.py
+      - name: Check generated files are current
+        run: git diff --exit-code -- docs
+      - name: Check page metadata and links
+        run: python3 tools/check_site.py
+      - name: Check JavaScript
+        run: |
+          node --check docs/app.js
+          node --check docs/guide.js

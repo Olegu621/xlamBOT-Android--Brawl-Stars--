@@ -1,0 +1,12 @@
+name: Предложить функцию / Feature request
+description: Расскажи, какой сценарий стоит улучшить
+title: "[Feature] "
+body:
+  - type: textarea
+    id: need
+    attributes: {label: Что хочется сделать / What do you want to do?}
+    validations: {required: true}
+  - type: textarea
+    id: behavior
+    attributes: {label: Как это должно работать / Expected behavior}
+    validations: {required: true}

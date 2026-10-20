@@ -45,10 +45,23 @@ dialog.addEventListener('close', () => {
   videoTrigger?.focus();
 });
 function revealAnchor() {
-  if (location.hash === '#restricted-settings') document.querySelector(location.hash).open = true;
+  const id = decodeURIComponent(location.hash.slice(1));
+  const target = id ? document.getElementById(id) : null;
+  if (target?.matches('details')) { target.hidden = false; target.open = true; }
 }
 window.addEventListener('hashchange', revealAnchor);
 revealAnchor();
+document.querySelectorAll('.mobile-menu a').forEach(link => link.addEventListener('click', () => { link.closest('details').open = false; }));
+const faqSearch = document.querySelector('#faq-search');
+faqSearch?.addEventListener('input', () => {
+  const query = faqSearch.value.trim().toLocaleLowerCase('ru');
+  let visible = 0;
+  document.querySelectorAll('.faq').forEach(item => {
+    item.hidden = !item.textContent.toLocaleLowerCase('ru').includes(query);
+    if (!item.hidden) visible++;
+  });
+  document.querySelector('#faq-empty').hidden = visible > 0;
+});
 if ('IntersectionObserver' in window) {
   const sticky = document.querySelector('.mobile-download');
   const observed = new Set();

@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Установка и помощь / Setup and help
+    url: https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/help/
+    about: Быстрые решения частых проблем / Common troubleshooting steps
+  - name: Новости и сообщество / News and community
+    url: https://t.me/xlamModz
+    about: Telegram-канал xlamBOT

@@ -1,0 +1,33 @@
+name: Device report / bug (English)
+description: Report a bug or tell us which device works well
+title: "[Android] Device — short description"
+body:
+  - type: input
+    id: device
+    attributes: {label: Device model and chipset}
+    validations: {required: true}
+  - type: input
+    id: android
+    attributes: {label: Android version and manufacturer UI}
+    validations: {required: true}
+  - type: input
+    id: app
+    attributes: {label: xlamBOT version}
+    validations: {required: true}
+  - type: dropdown
+    id: result
+    attributes:
+      label: Result
+      options: [Works well, Has a problem]
+    validations: {required: true}
+  - type: textarea
+    id: steps
+    attributes:
+      label: What happened and how to reproduce it
+      description: Include capture source, CPU/GPU/NNAPI, brawler, mode and elapsed time.
+    validations: {required: true}
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Recent log lines and recording
+      description: Do not include passwords, access tokens or payment data.
