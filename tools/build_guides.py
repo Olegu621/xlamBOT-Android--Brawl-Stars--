@@ -2,7 +2,7 @@
 """Build public help pages with Python's standard library; Android sources stay private."""
 from pathlib import Path
 from html import escape
-import json
+import json,re
 
 ROOT = Path(__file__).resolve().parent.parent
 DOCS = ROOT / 'docs'
@@ -14,7 +14,7 @@ PAGES = {
  'install': {
   'title': 'Как установить xlamBOT на Android — настройка бота Brawl Stars',
   'description': 'Пошаговая установка xlamBOT APK: специальные возможности, захват Brawl Stars, разрешённые настройки Android, первый запуск и обновление без потери данных.',
-  'heading': 'Первый запуск. По шагам.', 'label': 'Установка',
+  'heading': 'Как установить xlamBOT на Android', 'label': 'Установка',
   'lead': 'От скачивания APK до первого матча. Всё на телефоне, без root и постоянно подключённого компьютера.',
   'body': '''<nav class="guide-toc" aria-label="В этой инструкции"><a href="#download">Скачать</a><a href="#permissions">Разрешения</a><a href="#capture">Изображение</a><a href="#play">Первый матч</a><a href="#update">Обновление</a></nav>
 <section id="download"><h2>1. Скачай и установи APK</h2><p>Скачивай xlamBOT с этого сайта или из Releases нашего GitHub. Открой файл на телефоне. Если Android попросит, разреши установку для того браузера или файлового менеджера, из которого открыт APK.</p><p>При обновлении устанавливай APK <strong>поверх предыдущей версии</strong>. Удалять приложение для обычного обновления не нужно: удаление может стереть локальные настройки, очередь и историю.</p></section>
@@ -26,7 +26,7 @@ PAGES = {
  'features': {
   'title': 'Функции xlamBOT — Free, Plus, стили игры и очередь бойцов',
   'description': 'Сравнение Free и Plus в xlamBOT для Brawl Stars: три стиля, очередь, уклонение, GPU, прицеливание и пробный доступ на 72 часа. Plus — 50 Stars на 30 дней.',
-  'heading': 'Твой стиль. Твои настройки.', 'label': 'Free и Plus',
+  'heading': 'xlamBOT Free и Plus: функции бота', 'label': 'Free и Plus',
   'lead': 'Базовая игра доступна бесплатно. Plus добавляет переключаемые возможности — выбирай только то, что нужно.',
   'body': '''<nav class="guide-toc" aria-label="На этой странице"><a href="#free">Free</a><a href="#compare">Сравнение</a><a href="#plus">Подключить Plus</a><a href="#acceleration">Ускорение</a></nav>
 <section id="free"><h2>Что умеет бесплатный xlamBOT</h2><ul><li><strong>Распознаёт экран и управляет касаниями:</strong> движение, обычная атака, супер, гаджет и гиперзаряд с проверкой готовности.</li><li><strong>Учитывает поле:</strong> препятствия, воду и газ; способность ходить по воде зависит от выбранного бойца.</li><li><strong>Три стиля игры:</strong> агрессивный, сбалансированный и тактический. Стиль меняет темп сближения, рабочую дистанцию и осторожность.</li><li><strong>Очередь бойцов и статистика:</strong> настрой порядок и цели, следи за матчами и трофеями.</li><li><strong>Управление с телефона:</strong> плавающие старт и стоп, журнал, закрытие панели; поддерживаются Android 8+, ARM64, ARMv7 и x86_64.</li></ul></section>
@@ -37,7 +37,7 @@ PAGES = {
  'help': {
   'title': 'Помощь xlamBOT — unknown, нет атак, RETRY LOGIN и ошибки Android',
   'description': 'Что делать, если xlamBOT стоит, не атакует, пишет unknown или no_frame, не нажимает RETRY LOGIN. Проверка разрешений, изображения и шаблон отчёта об ошибке.',
-  'heading': 'Разберёмся. По симптому.', 'label': 'Помощь',
+  'heading': 'Помощь xlamBOT: ошибки и решения', 'label': 'Помощь',
   'lead': 'Сначала проверь версию и свежие строки журнала. Ниже — конкретные действия для частых ситуаций.',
   'body': '''<nav class="guide-toc" aria-label="Выбери симптом"><a href="#standing">Стоит / unknown</a><a href="#no-frame">Нет изображения</a><a href="#retry-login">Connection lost</a><a href="#invalid-package">Не устанавливается</a><a href="#report">Сообщить о проблеме</a></nav>
 <section id="standing"><h2>Стоит на месте, не атакует или unknown</h2><ol><li>Установи последнюю версию APK поверх текущей. Выключи и снова включи службу xlamBOT в специальных возможностях.</li><li>Проверь, что в игре выбран <strong>English</strong>, в xlamBOT указан правильный боец, а кнопки управления стоят на стандартных местах.</li><li>Для проверки выбери <strong>Trio Showdown</strong>, закрой большую панель xlamBOT и оставь игру видимой.</li><li>Открой журнал: если там нет свежих кадров, сначала восстанови изображение по инструкции ниже. Если кадры есть, запиши экран со статусом и последние строки журнала.</li></ol><p>Unknown означает, что текущий экран не был уверенно распознан. Само это слово не объясняет причину — важны кадр игры и журнал рядом с моментом остановки.</p></section>
@@ -58,7 +58,7 @@ CPU / GPU / NNAPI:
  'en': {
   'lang': 'en', 'title': 'xlamBOT — Brawl Stars Bot for Android | Free APK Download',
   'description': 'Download xlamBOT for Android 8+: Brawl Stars screen recognition, movement, attacks, three play styles and brawler queues. Free APK, setup guide and optional Plus.',
-  'heading': 'Your game. Its next move.', 'label': 'English',
+  'heading': 'xlamBOT — Brawl Stars bot for Android', 'label': 'English',
   'lead': 'xlamBOT is a Brawl Stars bot for Android. It reads the game screen and controls movement and attacks through touch input, directly on your device.',
   'body': '''<img src="../assets/gameplay.webp" width="854" height="382" alt="Brawl Stars match with the xlamBOT control overlay" style="display:block;width:100%;height:auto;border-radius:12px;margin:30px 0">
 <section id="features"><h2>What is included in Free?</h2><ul><li>Three play styles: aggressive, balanced and tactical.</li><li>Movement, attacks and abilities, basic dodging, obstacle and gas awareness.</li><li>Brawler queues, match history and trophy statistics.</li><li>Floating start/stop controls, an activity log and manual APK updates.</li></ul><p>Android 8 or later; ARM64, ARMv7 and x86_64. Root and a permanently connected PC are not required. This public repository contains releases, the website and documentation; Android application sources are private.</p></section>
@@ -68,7 +68,48 @@ CPU / GPU / NNAPI:
  }
 }
 
+PAGES.update({
+ 'watch': {
+  'title': 'Как играет xlamBOT в Brawl Stars — видео работы бота на Android',
+  'description': 'Реальная запись xlamBOT в Brawl Stars: игровой процесс и плавающая панель бота. Посмотри 17-секундное видео и скачай бесплатный APK для Android.',
+  'heading': 'Как играет xlamBOT в Brawl Stars', 'label': 'Видео игры',
+  'lead': 'Реальная запись игрового процесса с панелью xlamBOT. 17 секунд, без добавленной музыки.',
+  'watch': True,
+  'body': '''<figure class="watch-player"><video controls playsinline preload="none" poster="../assets/video-cover.webp" width="720" height="1280" aria-label="Запись игры xlamBOT в Brawl Stars"><source src="../assets/gameplay.mp4" type="video/mp4"><a href="../assets/gameplay.mp4">Открыть видео MP4</a></video><figcaption>Запись работы бота. Длительность: 17,4 секунды.</figcaption></figure>
+<div class="guide-actions"><a class="button button-lime" href="https://github.com/Olegu621/xlamBOT-Android--Brawl-Stars--/releases/latest/download/xlamBOT.apk">Скачать xlamBOT бесплатно ↗</a><a class="button button-outline" href="../install/">Как запустить</a></div>
+<h2>Что видно в записи</h2><p>Игра Brawl Stars, движение и атаки персонажа, поверх игры — панель xlamBOT со статусом и кнопкой остановки. Результат показанного матча — командный топ-1, 7 устранений, 0 смертей и 55 625 урона.</p><p>Это результат одного показанного боя. Он не гарантирует такого же результата в каждом матче. Поведение зависит от бойца, режима, карты, распознавания и устройства.</p>
+<h2>Как попробовать на своём телефоне</h2><p>Установи бесплатный APK, включи специальные возможности и подключи изображение игры. Для первого запуска выбери English в игре, Trio Showdown и стандартное управление. В xlamBOT укажи текущего бойца и стиль.</p><p>Подробные шаги — в <a href="../install/">инструкции установки xlamBOT</a>. <a href="../features/">Сравнение Free и Plus</a> поможет выбрать настройки, а <a href="../help/">страница помощи</a> — разобраться с unknown и отсутствием движения.</p>'''
+ },
+ 'updates': {
+  'title': 'Обновления xlamBOT для Android — версии APK и список изменений',
+  'description': 'Что нового в xlamBOT 1.1.2, 1.1.1 и 1.1.0: RETRY LOGIN, захват отдельного приложения и функции Plus. Ссылки на релизы APK и обновление с сохранением настроек.',
+  'heading': 'Обновления xlamBOT для Android', 'label': 'Что нового',
+  'lead': 'Изменения опубликованных версий и ссылки на APK. Новые версии устанавливаются вручную поверх текущей.',
+  'body': '''<nav class="guide-toc" aria-label="Версии"><a href="#v112">1.1.2</a><a href="#v111">1.1.1</a><a href="#v110">1.1.0</a><a href="#update">Как обновиться</a></nav>
+<section class="guide-card" id="v112"><p class="guide-kicker">20 ОКТЯБРЯ 2026 / 1.1.2</p><h2>Кнопка RETRY LOGIN после потери соединения</h2><p>Окно Connection lost распознаётся до общего меню. Бот находит текст RETRY LOGIN, нажимает кнопку внутри игрового диалога и проверяет, что она не исчезла во время распознавания.</p><p><a href="https://github.com/Olegu621/xlamBOT-Android--Brawl-Stars--/releases/tag/v1.1.2">Релиз 1.1.2 и APK →</a></p></section>
+<section class="guide-card" id="v111"><p class="guide-kicker">20 ОКТЯБРЯ 2026 / 1.1.1</p><h2>Захват только Brawl Stars</h2><p>На поддерживаемых Android 14+ системная трансляция позволяет выбрать одно приложение. Захват учитывает размер и положение выбранного окна. При скрытии игры кадр очищается, после возвращения изображение возобновляется.</p><p><a href="https://github.com/Olegu621/xlamBOT-Android--Brawl-Stars--/releases/tag/v1.1.1">Релиз 1.1.1 →</a> · <a href="../install/#capture">Как подключить изображение →</a></p></section>
+<section class="guide-card" id="v110"><p class="guide-kicker">19 ОКТЯБРЯ 2026 / 1.1.0</p><h2>Free и дополнительные возможности Plus</h2><p>Plus добавляет усиленное уклонение, прицеливание с упреждением, прямой GPU и адаптивное аппаратное ускорение, режим кустов, ящики усиления и смену бойца по чистому приросту +N кубков.</p><p>Пробный доступ — 72 часа один раз на Telegram-аккаунт. Покупка — 50 Stars на 30 дней, продление вручную.</p><p><a href="https://github.com/Olegu621/xlamBOT-Android--Brawl-Stars--/releases/tag/v1.1.0">Релиз 1.1.0 →</a> · <a href="../features/">Все функции Free и Plus →</a></p></section>
+<section id="update"><h2>Обновление без удаления приложения</h2><ol><li>Скачай актуальный APK с главной страницы или из Releases.</li><li>Установи его поверх xlamBOT. Удалять приложение для обычного обновления не нужно.</li><li>Выключи и снова включи службу xlamBOT в специальных возможностях.</li><li>Если изображение не поступает, отключи источник изображения и подключи его заново.</li></ol><p>Локальные настройки и история сохраняются при обычной установке поверх приложения. <a href="../help/">Если обновление не устанавливается или бот остановился →</a></p></section>'''
+ }
+})
+
+def video_schema():
+ return {'@type':'VideoObject','@id':BASE+'watch/#video','name':'Как играет xlamBOT в Brawl Stars','description':'Реальная запись игры с панелью xlamBOT на Android. Показаны игровой процесс, движение и атаки. Результат одного боя не гарантирует результат следующих матчей.','thumbnailUrl':[BASE+'assets/video-cover.webp'],'contentUrl':BASE+'assets/gameplay.mp4','uploadDate':'2026-10-17T10:52:25+03:00','duration':'PT17.4S','inLanguage':'ru','isFamilyFriendly':True}
+
 def build():
+ font_css=(DOCS/'assets/fonts/fonts.css').read_text(encoding='utf-8')
+ font_css=re.sub(r'url\(([^)]+)\)',lambda match:'url(assets/fonts/'+match.group(1)+')',font_css)
+ (DOCS/'site.css').write_text(font_css+'\n'+(DOCS/'style.css').read_text(encoding='utf-8')+'\n'+(DOCS/'guide.css').read_text(encoding='utf-8'),encoding='utf-8')
+ home_path=DOCS/'index.html'
+ home_text=home_path.read_text(encoding='utf-8')
+ version=re.search(r'data-version>([0-9.]+)',home_text).group(1)
+ graph={'@context':'https://schema.org','@graph':[
+  {'@type':'WebSite','@id':BASE+'#website','url':BASE,'name':'xlamBOT','alternateName':'xlamBOT Android','inLanguage':['ru','en']},
+  {'@type':'WebPage','@id':BASE+'#page','url':BASE,'name':'xlamBOT — бот для Brawl Stars на Android','inLanguage':'ru','dateModified':'2026-10-20','isPartOf':{'@id':BASE+'#website'},'mainEntity':{'@id':BASE+'#app'}},
+  {'@type':'MobileApplication','@id':BASE+'#app','name':'xlamBOT','applicationCategory':'GameApplication','operatingSystem':'Android 8.0 or later','softwareVersion':version,'url':BASE,'downloadUrl':APK,'image':BASE+'assets/social.jpg','screenshot':BASE+'assets/gameplay.webp','releaseNotes':BASE+'updates/','softwareHelp':{'@type':'CreativeWork','url':BASE+'help/'},'creator':{'@type':'Person','name':'Olegu621','url':'https://github.com/Olegu621'},'description':'Бот для Brawl Stars на Android: распознавание экрана, движение, атаки, три стиля и очередь бойцов. Free бесплатен, дополнительные возможности доступны в Plus.','isAccessibleForFree':True,'featureList':['Screen recognition and touch controls','Three play styles','Brawler queues and match statistics','Optional Plus'],'offers':{'@type':'Offer','price':'0','priceCurrency':'USD','description':'Free APK; optional Plus is sold separately in Telegram.'},'sameAs':[REPO,'https://t.me/xlamModz']}
+ ]}
+ home_text=re.sub(r'<script type="application/ld\+json">.*?</script>',lambda match:'<script type="application/ld+json">'+json.dumps(graph,ensure_ascii=False)+'</script>',home_text,flags=re.S)
+ home_path.write_text(home_text,encoding='utf-8')
  for slug,page in PAGES.items():
   en=page.get('lang')=='en'
   lang='en' if en else 'ru'
@@ -78,24 +119,32 @@ def build():
   links=''.join(f'<a href="{href}">{label}</a>' for href,label in nav)
   home='Home' if en else 'Главная'
   cta='Download free APK' if en else 'Скачать APK бесплатно'
+  font_preloads=''.join(f'<link rel="preload" href="../assets/fonts/{family}-{subset}.woff2" as="font" type="font/woff2" crossorigin>' for family in ['unbounded','manrope'] for subset in (['latin'] if en else ['cyrillic','latin']))
   alternatives=''
   if en:
    alternatives=f'<link rel="alternate" hreflang="en" href="{url}"><link rel="alternate" hreflang="ru" href="{BASE}"><link rel="alternate" hreflang="x-default" href="{BASE}">'
-  schema={'@context':'https://schema.org','@type':'WebPage','name':page['title'],'description':page['description'],'url':url,'inLanguage':lang,'isPartOf':{'@type':'WebSite','name':'xlamBOT','url':BASE},'breadcrumb':{'@type':'BreadcrumbList','itemListElement':[{'@type':'ListItem','position':1,'name':home,'item':BASE},{'@type':'ListItem','position':2,'name':page['label'],'item':url}]}}
+  schema={'@context':'https://schema.org','@type':'WebPage','@id':url+'#page','name':page['title'],'description':page['description'],'url':url,'inLanguage':lang,'dateModified':'2026-10-20','isPartOf':{'@id':BASE+'#website'},'about':{'@id':BASE+'#app'},'breadcrumb':{'@type':'BreadcrumbList','itemListElement':[{'@type':'ListItem','position':1,'name':home,'item':BASE},{'@type':'ListItem','position':2,'name':page['label'],'item':url}]}}
+  if page.get('watch'):schema['mainEntity']=video_schema()
+  actions='' if page.get('watch') else f'<div class="guide-actions"><a class="button button-lime" href="{APK}">{cta} ↗</a><a class="button button-outline" href="https://t.me/xlamModz">Telegram ↗</a></div>'
+  social_image=BASE+'assets/'+('video-cover.webp' if page.get('watch') else 'social.jpg')
   html=f'''<!doctype html>
 <html lang="{lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0b0e0c">
 <title>{escape(page['title'])}</title><meta name="description" content="{escape(page['description'],quote=True)}"><meta name="robots" content="index,follow,max-image-preview:large">
-<link rel="canonical" href="{url}">{alternatives}<meta property="og:type" content="website"><meta property="og:site_name" content="xlamBOT"><meta property="og:title" content="{escape(page['title'],quote=True)}"><meta property="og:description" content="{escape(page['description'],quote=True)}"><meta property="og:url" content="{url}"><meta property="og:image" content="{BASE}assets/social.jpg"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="{BASE}assets/social.jpg">
-<link rel="icon" href="../assets/mark.svg" type="image/svg+xml"><link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="../guide.css"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Unbounded:wght@500;600;700;800&amp;display=swap" rel="stylesheet"><script src="../guide.js" defer></script><script type="application/ld+json">{json.dumps(schema,ensure_ascii=False)}</script></head>
+<link rel="canonical" href="{url}">{alternatives}<meta property="og:type" content="website"><meta property="og:site_name" content="xlamBOT"><meta property="og:locale" content="{'en_US' if en else 'ru_RU'}"><meta property="og:title" content="{escape(page['title'],quote=True)}"><meta property="og:description" content="{escape(page['description'],quote=True)}"><meta property="og:url" content="{url}"><meta property="og:image" content="{social_image}"><meta property="og:image:alt" content="{escape(page['heading'],quote=True)}"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{escape(page['title'],quote=True)}"><meta name="twitter:description" content="{escape(page['description'],quote=True)}"><meta name="twitter:image" content="{social_image}">
+<link rel="icon" href="../assets/mark.svg" type="image/svg+xml">{font_preloads}<link rel="stylesheet" href="../site.css"><script src="../guide.js" defer></script><script type="application/ld+json">{json.dumps(schema,ensure_ascii=False)}</script></head>
 <body><a class="skip" href="#main">{'Skip to content' if en else 'К содержимому'}</a><header class="header wrap"><a class="brand" href="../"><img src="../assets/mark.svg" width="36" height="36" alt=""><span>xlam<span class="brand-light">BOT</span></span><span class="platform">ANDROID</span></a><nav aria-label="{'Navigation' if en else 'Навигация'}">{links}</nav><a class="header-tg" href="https://t.me/xlamModz">Telegram ↗</a><details class="mobile-menu"><summary>{'Menu' if en else 'Меню'} <span aria-hidden="true">≡</span></summary><nav aria-label="{'Mobile navigation' if en else 'Меню телефона'}">{links}<a href="{APK}">{cta}</a></nav></details></header>
-<main class="wrap guide-page" id="main"><nav class="breadcrumbs" aria-label="{'Breadcrumb' if en else 'Хлебные крошки'}"><a href="../">xlamBOT</a><span aria-hidden="true">/</span><span>{page['label']}</span></nav><p class="guide-kicker">XLAMBOT / ANDROID</p><h1>{page['heading']}</h1><p class="guide-lead">{page['lead']}</p><div class="guide-actions"><a class="button button-lime" href="{APK}">{cta} ↗</a><a class="button button-outline" href="https://t.me/xlamModz">Telegram ↗</a></div>{page['body']}<div class="guide-bottom"><nav class="guide-links" aria-label="{'More' if en else 'Дальше'}"><a href="../install/">{'Installation guide (RU)' if en else 'Как установить →'}</a><a href="../features/">{'Free and Plus (RU)' if en else 'Все функции и Plus →'}</a><a href="../help/">{'Troubleshooting (RU)' if en else 'Решение проблем →'}</a></nav><p><a href="{REPO}">GitHub</a> · <a href="{REPO}/releases/latest">{'Release notes' if en else 'Что нового'}</a> · <a href="../">{'Back to home' if en else 'На главную'}</a></p></div></main><footer class="footer wrap"><a class="brand" href="../">xlamBOT</a><p>{'Independent project. Not affiliated with Supercell.' if en else 'Самостоятельный проект. Не связан с Supercell.'}</p><a href="https://t.me/xlamModz">@xlamModz ↗</a></footer></body></html>
+<main class="wrap guide-page" id="main"><nav class="breadcrumbs" aria-label="{'Breadcrumb' if en else 'Хлебные крошки'}"><a href="../">xlamBOT</a><span aria-hidden="true">/</span><span>{page['label']}</span></nav><p class="guide-kicker">XLAMBOT / ANDROID</p><h1>{page['heading']}</h1><p class="guide-lead">{page['lead']}</p>{actions}{page['body']}<div class="guide-bottom"><nav class="guide-links" aria-label="{'More' if en else 'Дальше'}"><a href="../install/">{'Installation guide (RU)' if en else 'Как установить →'}</a><a href="../features/">{'Free and Plus (RU)' if en else 'Все функции и Plus →'}</a><a href="../help/">{'Troubleshooting (RU)' if en else 'Решение проблем →'}</a><a href="../watch/">{'Gameplay video (RU)' if en else 'Запись игры →'}</a><a href="../updates/">{'Updates (RU)' if en else 'Обновления APK →'}</a></nav><p><a href="{REPO}">GitHub</a> · <a href="{REPO}/releases/latest">{'Release notes' if en else 'Что нового'}</a> · <a href="../">{'Back to home' if en else 'На главную'}</a></p><p class="maintainer">{'Maintained by' if en else 'Проект поддерживает'} <a href="https://github.com/Olegu621">Olegu621</a> · {'Updated' if en else 'Обновлено'}: <time datetime="2026-10-20">20.10.2026</time></p></div></main><footer class="footer wrap"><a class="brand" href="../">xlamBOT</a><p>{'Independent project. Not affiliated with Supercell.' if en else 'Самостоятельный проект. Не связан с Supercell.'}</p><a href="https://t.me/xlamModz">@xlamModz ↗</a></footer></body></html>
 '''
   directory=DOCS/slug;directory.mkdir(exist_ok=True)
   (directory/'index.html').write_text(html,encoding='utf-8')
- sitemap='<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+ sitemap='<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">\n'
  for slug in ['',*PAGES]:
-  sitemap+=f'  <url><loc>{BASE}{slug+"/" if slug else ""}</loc></url>\n'
+  sitemap+=f'  <url><loc>{BASE}{slug+"/" if slug else ""}</loc><lastmod>2026-10-20</lastmod>'
+  if slug=='watch':
+   video=video_schema()
+   sitemap+=f'<video:video><video:thumbnail_loc>{video["thumbnailUrl"][0]}</video:thumbnail_loc><video:title>{escape(video["name"])}</video:title><video:description>{escape(video["description"])}</video:description><video:content_loc>{video["contentUrl"]}</video:content_loc><video:duration>17</video:duration></video:video>'
+  sitemap+='</url>\n'
  (DOCS/'sitemap.xml').write_text(sitemap+'</urlset>\n',encoding='utf-8')
- print('Built four linked guides and canonical sitemap')
+ print(f'Built {len(PAGES)} public guides and video sitemap')
 
 if __name__=='__main__':build()

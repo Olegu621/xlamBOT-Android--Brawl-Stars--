@@ -28,8 +28,10 @@ tabs.forEach((tab,index) => {
 const dialog = document.querySelector('#video-dialog');
 const video = document.querySelector('#game-video');
 let videoTrigger;
-document.querySelectorAll('[data-watch]').forEach(button => button.addEventListener('click', () => {
-  videoTrigger = button;
+document.querySelectorAll('[data-watch]').forEach(trigger => trigger.addEventListener('click', event => {
+  if (typeof dialog.showModal !== 'function') return;
+  event.preventDefault();
+  videoTrigger = trigger;
   dialog.showModal();
   document.body.style.overflow = 'hidden';
   video.play().catch(() => {});

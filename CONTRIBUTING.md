@@ -11,7 +11,9 @@
 
 ## Website documentation
 
-Static pages are served from `docs/` by GitHub Pages. Edit the home page in `docs/index.html`; help-page content is maintained in `tools/build_guides.py`. Run `python tools/build_guides.py` to regenerate the four guides and sitemap. The generator uses only Python's standard library.
+Static pages are served from `docs/` by GitHub Pages. Edit the home page in `docs/index.html`; guide, video and update-page content is maintained in `tools/build_guides.py`. Run `python tools/build_guides.py` to regenerate the six guides, shared `site.css`, home-page structured data and video sitemap. The generator uses only Python's standard library. Edit `style.css`, `guide.css` or `assets/fonts/fonts.css` as sources; `site.css` is generated.
+
+The site serves its fonts locally, with original OFL licenses. Preserve the owner's Google verification tag. Keep `lastmod` and visible update dates tied to actual changes; do not bump them on every build. The video upload date is the first asset commit and its duration comes from the actual file. No ratings or reviews are fabricated for structured data.
 
 Keep canonical URLs and release links consistent. Preserve the Free/Plus distinction and manual renewal terms. The Android application, signing material, native symbols and models do not belong in this public repository.
 

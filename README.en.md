@@ -4,6 +4,8 @@
 
 [Download and website](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/en/) · [Latest APK](https://github.com/Olegu621/xlamBOT-Android--Brawl-Stars--/releases/latest/download/xlamBOT.apk) · [Release notes](https://github.com/Olegu621/xlamBOT-Android--Brawl-Stars--/releases/latest) · [Русский](README.md)
 
+[Watch actual gameplay](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/watch/) · [Version history (RU)](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/updates/)
+
 [![xlamBOT running in Brawl Stars](docs/assets/social.jpg)](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/en/)
 
 xlamBOT reads the game screen and controls touches directly on Android. No root or permanently connected PC is required. Supports Android 8+, ARM64, ARMv7 and x86_64.

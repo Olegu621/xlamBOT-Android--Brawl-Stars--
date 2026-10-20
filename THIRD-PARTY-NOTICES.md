@@ -13,3 +13,7 @@
 Изменение видимости репозитория приложения не изменяет лицензии сторонних компонентов.
 
 - LiteRT 1.4.2 и GPU delegate — Google, Apache-2.0; https://github.com/google-ai-edge/LiteRT . Используются для прямого GPU-вычисления модели боя.
+
+## Website fonts
+
+The website bundles unmodified Manrope and Unbounded variable WOFF2 fonts distributed by Google Fonts under the SIL Open Font License 1.1. Original copyright notices and licenses are included in `docs/assets/fonts/OFL-manrope.txt` and `docs/assets/fonts/OFL-unbounded.txt`. These fonts are part of the website assets, independently of Android application components listed above.
