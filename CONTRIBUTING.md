@@ -11,7 +11,9 @@
 
 ## Website documentation
 
-Static pages are served from `docs/` by GitHub Pages. Edit the home page in `docs/index.html`; guide, video and update-page content is maintained in `tools/build_guides.py`. Run `python tools/build_guides.py` to regenerate the six guides, shared `site.css`, home-page structured data and video sitemap. The generator uses only Python's standard library. Edit `style.css`, `guide.css` or `assets/fonts/fonts.css` as sources; `site.css` is generated.
+Static pages are served from `docs/` by GitHub Pages. Edit the home page in `docs/index.html`; short guide, video and update-page content is maintained in `tools/build_guides.py`. The full manual lives in `tools/manual_content.py`: ten chapters with stable section IDs, descriptions and user-facing instructions. Run `python tools/build_guides.py` to regenerate all guides, the manual index, shared `site.css`, home-page structured data and video sitemap. The generator uses only Python's standard library. Edit `style.css`, `guide.css` or `assets/fonts/fonts.css` as sources; `site.css` is generated.
+
+Manual search uses the rendered chapter text locally in the browser. Chapter links and content work without JavaScript. Keep section IDs stable so support links continue to work. Validate instructions against the actual app labels, distinguish final trophy targets from net trophy gains, and avoid exposing private implementation details. The print stylesheet supports browser PDF export; it is not a separate hosted PDF file.
 
 The site serves its fonts locally, with original OFL licenses. Preserve the owner's Google verification tag. Keep `lastmod` and visible update dates tied to actual changes; do not bump them on every build. The video upload date is the first asset commit and its duration comes from the actual file. No ratings or reviews are fabricated for structured data.
 

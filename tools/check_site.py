@@ -5,6 +5,8 @@ from urllib.parse import urlparse, unquote
 from collections import Counter
 import json,re
 import xml.etree.ElementTree as ET
+from build_guides import PAGES
+from manual_content import CHAPTERS
 
 ROOT=Path(__file__).resolve().parent.parent
 
@@ -69,7 +71,16 @@ def check():
             if url.fragment and target in pages:assert url.fragment in pages[target].ids,(file,href)
     urls={entry.text for entry in ET.parse(ROOT/'docs/sitemap.xml').findall('.//{*}loc')}
     assert urls=={page.canonical[0] for page in indexed.values()}
-    assert len(indexed)==7
+    assert len(indexed)==len(PAGES)+1
+    for chapter in CHAPTERS:
+        manual=pages[(ROOT/'docs'/chapter['slug']/'index.html').resolve()]
+        assert all(anchor in manual.ids for anchor,_,_ in chapter['sections']),chapter['slug']
+        assert '../guide/' in manual.links,chapter['slug']
+    hub=pages[(ROOT/'docs/guide/index.html').resolve()]
+    assert 'manual-query' in hub.ids and 'manual-results' in hub.ids
+    for chapter in CHAPTERS:
+        assert '../'+chapter['slug']+'/' in hub.links,chapter['slug']
+        assert all('../'+chapter['slug']+'/#'+anchor in hub.links for anchor,_,_ in chapter['sections'])
     video=ET.parse(ROOT/'docs/sitemap.xml').findall('.//{http://www.google.com/schemas/sitemap-video/1.1}video')
     assert len(video)==1 and video[0].find('{*}duration').text=='17'
     font_dir=ROOT/'docs/assets/fonts'

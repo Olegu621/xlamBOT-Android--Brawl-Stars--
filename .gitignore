@@ -6,3 +6,5 @@ seeds.txt
 usage.txt
 local.properties
 node_modules/
+__pycache__/
+*.pyc

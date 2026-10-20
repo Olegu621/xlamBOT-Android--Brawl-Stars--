@@ -3,6 +3,7 @@
 from pathlib import Path
 from html import escape
 import json,re
+from manual_content import pages as manual_pages, chapter_nav
 
 ROOT = Path(__file__).resolve().parent.parent
 DOCS = ROOT / 'docs'
@@ -93,6 +94,8 @@ PAGES.update({
  }
 })
 
+PAGES.update(manual_pages())
+
 def video_schema():
  return {'@type':'VideoObject','@id':BASE+'watch/#video','name':'Как играет xlamBOT в Brawl Stars','description':'Реальная запись игры с панелью xlamBOT на Android. Показаны игровой процесс, движение и атаки. Результат одного боя не гарантирует результат следующих матчей.','thumbnailUrl':[BASE+'assets/video-cover.webp'],'contentUrl':BASE+'assets/gameplay.mp4','uploadDate':'2026-10-17T10:52:25+03:00','duration':'PT17.4S','inLanguage':'ru','isFamilyFriendly':True}
 
@@ -105,7 +108,7 @@ def build():
  version=re.search(r'data-version>([0-9.]+)',home_text).group(1)
  graph={'@context':'https://schema.org','@graph':[
   {'@type':'WebSite','@id':BASE+'#website','url':BASE,'name':'xlamBOT','alternateName':'xlamBOT Android','inLanguage':['ru','en']},
-  {'@type':'WebPage','@id':BASE+'#page','url':BASE,'name':'xlamBOT — бот для Brawl Stars на Android','inLanguage':'ru','dateModified':'2026-10-20','isPartOf':{'@id':BASE+'#website'},'mainEntity':{'@id':BASE+'#app'}},
+  {'@type':'WebPage','@id':BASE+'#page','url':BASE,'name':'xlamBOT — бот для Brawl Stars на Android','inLanguage':'ru','dateModified':'2026-10-21','isPartOf':{'@id':BASE+'#website'},'mainEntity':{'@id':BASE+'#app'}},
   {'@type':'MobileApplication','@id':BASE+'#app','name':'xlamBOT','applicationCategory':'GameApplication','operatingSystem':'Android 8.0 or later','softwareVersion':version,'url':BASE,'downloadUrl':APK,'image':BASE+'assets/social.jpg','screenshot':BASE+'assets/gameplay.webp','releaseNotes':BASE+'updates/','softwareHelp':{'@type':'CreativeWork','url':BASE+'help/'},'creator':{'@type':'Person','name':'Olegu621','url':'https://github.com/Olegu621'},'description':'Бот для Brawl Stars на Android: распознавание экрана, движение, атаки, три стиля и очередь бойцов. Free бесплатен, дополнительные возможности доступны в Plus.','isAccessibleForFree':True,'featureList':['Screen recognition and touch controls','Three play styles','Brawler queues and match statistics','Optional Plus'],'offers':{'@type':'Offer','price':'0','priceCurrency':'USD','description':'Free APK; optional Plus is sold separately in Telegram.'},'sameAs':[REPO,'https://t.me/xlamModz']}
  ]}
  home_text=re.sub(r'<script type="application/ld\+json">.*?</script>',lambda match:'<script type="application/ld+json">'+json.dumps(graph,ensure_ascii=False)+'</script>',home_text,flags=re.S)
@@ -114,7 +117,7 @@ def build():
   en=page.get('lang')=='en'
   lang='en' if en else 'ru'
   url=BASE+slug+'/'
-  nav=[('../','Главная'),('../install/','Установка'),('../features/','Free и Plus'),('../help/','Помощь'),('../en/','EN')]
+  nav=[('../','Главная'),('../guide/','Документация'),('../features/','Free и Plus'),('../help/','Помощь'),('../en/','EN')]
   if en: nav=[('../','Русский'),('#features','Features'),('#setup','Setup'),('#plus','Plus'),('#support','Support')]
   links=''.join(f'<a href="{href}">{label}</a>' for href,label in nav)
   home='Home' if en else 'Главная'
@@ -123,23 +126,34 @@ def build():
   alternatives=''
   if en:
    alternatives=f'<link rel="alternate" hreflang="en" href="{url}"><link rel="alternate" hreflang="ru" href="{BASE}"><link rel="alternate" hreflang="x-default" href="{BASE}">'
-  schema={'@context':'https://schema.org','@type':'WebPage','@id':url+'#page','name':page['title'],'description':page['description'],'url':url,'inLanguage':lang,'dateModified':'2026-10-20','isPartOf':{'@id':BASE+'#website'},'about':{'@id':BASE+'#app'},'breadcrumb':{'@type':'BreadcrumbList','itemListElement':[{'@type':'ListItem','position':1,'name':home,'item':BASE},{'@type':'ListItem','position':2,'name':page['label'],'item':url}]}}
+  modified=page.get('modified','2026-10-21')
+  date_label='.'.join(reversed(modified.split('-')))
+  crumbs=[{'@type':'ListItem','position':1,'name':home,'item':BASE}]
+  if 'chapter' in page:crumbs.append({'@type':'ListItem','position':2,'name':'Документация','item':BASE+'guide/'})
+  crumbs.append({'@type':'ListItem','position':len(crumbs)+1,'name':page['label'],'item':url})
+  schema={'@context':'https://schema.org','@type':'WebPage','@id':url+'#page','name':page['title'],'description':page['description'],'url':url,'inLanguage':lang,'dateModified':modified,'isPartOf':{'@id':BASE+'#website'},'about':{'@id':BASE+'#app'},'breadcrumb':{'@type':'BreadcrumbList','itemListElement':crumbs}}
   if page.get('watch'):schema['mainEntity']=video_schema()
-  actions='' if page.get('watch') else f'<div class="guide-actions"><a class="button button-lime" href="{APK}">{cta} ↗</a><a class="button button-outline" href="https://t.me/xlamModz">Telegram ↗</a></div>'
+  actions='' if page.get('watch') or page.get('manual') else f'<div class="guide-actions"><a class="button button-lime" href="{APK}">{cta} ↗</a><a class="button button-outline" href="https://t.me/xlamModz">Telegram ↗</a></div>'
+  if not page.get('manual'):
+   actions+=('<p class="guide-tip"><a href="../guide/">Full user manual (Russian): setup, queues, Plus and troubleshooting →</a></p>' if en else '<p class="guide-tip"><a href="../guide/">Нужно подробнее? Полная документация с поиском, примерами и разбором настроек →</a></p>')
   social_image=BASE+'assets/'+('video-cover.webp' if page.get('watch') else 'social.jpg')
+  manual=chapter_nav(slug) if 'chapter' in page else ''
+  chapter_crumb='<a href="../guide/">Документация</a><span aria-hidden="true">/</span>' if 'chapter' in page else ''
+  tools='<div class="manual-tools" data-manual-tools hidden><button type="button" data-print>Печать / PDF</button><a href="../guide/">Поиск по руководству</a><span role="status" aria-live="polite" id="manual-copy-status"></span></div>' if 'chapter' in page else ''
   html=f'''<!doctype html>
 <html lang="{lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0b0e0c">
 <title>{escape(page['title'])}</title><meta name="description" content="{escape(page['description'],quote=True)}"><meta name="robots" content="index,follow,max-image-preview:large">
 <link rel="canonical" href="{url}">{alternatives}<meta property="og:type" content="website"><meta property="og:site_name" content="xlamBOT"><meta property="og:locale" content="{'en_US' if en else 'ru_RU'}"><meta property="og:title" content="{escape(page['title'],quote=True)}"><meta property="og:description" content="{escape(page['description'],quote=True)}"><meta property="og:url" content="{url}"><meta property="og:image" content="{social_image}"><meta property="og:image:alt" content="{escape(page['heading'],quote=True)}"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{escape(page['title'],quote=True)}"><meta name="twitter:description" content="{escape(page['description'],quote=True)}"><meta name="twitter:image" content="{social_image}">
 <link rel="icon" href="../assets/mark.svg" type="image/svg+xml">{font_preloads}<link rel="stylesheet" href="../site.css"><script src="../guide.js" defer></script><script type="application/ld+json">{json.dumps(schema,ensure_ascii=False)}</script></head>
 <body><a class="skip" href="#main">{'Skip to content' if en else 'К содержимому'}</a><header class="header wrap"><a class="brand" href="../"><img src="../assets/mark.svg" width="36" height="36" alt=""><span>xlam<span class="brand-light">BOT</span></span><span class="platform">ANDROID</span></a><nav aria-label="{'Navigation' if en else 'Навигация'}">{links}</nav><a class="header-tg" href="https://t.me/xlamModz">Telegram ↗</a><details class="mobile-menu"><summary>{'Menu' if en else 'Меню'} <span aria-hidden="true">≡</span></summary><nav aria-label="{'Mobile navigation' if en else 'Меню телефона'}">{links}<a href="{APK}">{cta}</a></nav></details></header>
-<main class="wrap guide-page" id="main"><nav class="breadcrumbs" aria-label="{'Breadcrumb' if en else 'Хлебные крошки'}"><a href="../">xlamBOT</a><span aria-hidden="true">/</span><span>{page['label']}</span></nav><p class="guide-kicker">XLAMBOT / ANDROID</p><h1>{page['heading']}</h1><p class="guide-lead">{page['lead']}</p>{actions}{page['body']}<div class="guide-bottom"><nav class="guide-links" aria-label="{'More' if en else 'Дальше'}"><a href="../install/">{'Installation guide (RU)' if en else 'Как установить →'}</a><a href="../features/">{'Free and Plus (RU)' if en else 'Все функции и Plus →'}</a><a href="../help/">{'Troubleshooting (RU)' if en else 'Решение проблем →'}</a><a href="../watch/">{'Gameplay video (RU)' if en else 'Запись игры →'}</a><a href="../updates/">{'Updates (RU)' if en else 'Обновления APK →'}</a></nav><p><a href="{REPO}">GitHub</a> · <a href="{REPO}/releases/latest">{'Release notes' if en else 'Что нового'}</a> · <a href="../">{'Back to home' if en else 'На главную'}</a></p><p class="maintainer">{'Maintained by' if en else 'Проект поддерживает'} <a href="https://github.com/Olegu621">Olegu621</a> · {'Updated' if en else 'Обновлено'}: <time datetime="2026-10-20">20.10.2026</time></p></div></main><footer class="footer wrap"><a class="brand" href="../">xlamBOT</a><p>{'Independent project. Not affiliated with Supercell.' if en else 'Самостоятельный проект. Не связан с Supercell.'}</p><a href="https://t.me/xlamModz">@xlamModz ↗</a></footer></body></html>
+<main class="wrap guide-page{' manual-page' if page.get('manual') else ''}" id="main"><nav class="breadcrumbs" aria-label="{'Breadcrumb' if en else 'Хлебные крошки'}"><a href="../">xlamBOT</a><span aria-hidden="true">/</span>{chapter_crumb}<span>{page['label']}</span></nav><p class="guide-kicker">XLAMBOT / ANDROID</p><h1>{page['heading']}</h1><p class="guide-lead">{page['lead']}</p>{tools}{manual}{actions}{page['body']}<div class="guide-bottom"><nav class="guide-links" aria-label="{'More' if en else 'Дальше'}"><a href="../guide/">{'Full manual (RU)' if en else 'Полная документация →'}</a><a href="../install/">{'Installation guide (RU)' if en else 'Как установить →'}</a><a href="../features/">{'Free and Plus (RU)' if en else 'Все функции и Plus →'}</a><a href="../help/">{'Troubleshooting (RU)' if en else 'Решение проблем →'}</a><a href="../watch/">{'Gameplay video (RU)' if en else 'Запись игры →'}</a><a href="../updates/">{'Updates (RU)' if en else 'Обновления APK →'}</a></nav><p><a href="{REPO}">GitHub</a> · <a href="{REPO}/releases/latest">{'Release notes' if en else 'Что нового'}</a> · <a href="../">{'Back to home' if en else 'На главную'}</a></p><p class="maintainer">{'Maintained by' if en else 'Проект поддерживает'} <a href="https://github.com/Olegu621">Olegu621</a> · {'Updated' if en else 'Обновлено'}: <time datetime="{modified}">{date_label}</time></p></div></main><footer class="footer wrap"><a class="brand" href="../">xlamBOT</a><p>{'Independent project. Not affiliated with Supercell.' if en else 'Самостоятельный проект. Не связан с Supercell.'}</p><a href="https://t.me/xlamModz">@xlamModz ↗</a></footer></body></html>
 '''
   directory=DOCS/slug;directory.mkdir(exist_ok=True)
   (directory/'index.html').write_text(html,encoding='utf-8')
  sitemap='<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">\n'
  for slug in ['',*PAGES]:
-  sitemap+=f'  <url><loc>{BASE}{slug+"/" if slug else ""}</loc><lastmod>2026-10-20</lastmod>'
+  modified=PAGES[slug].get('modified','2026-10-21') if slug else '2026-10-21'
+  sitemap+=f'  <url><loc>{BASE}{slug+"/" if slug else ""}</loc><lastmod>{modified}</lastmod>'
   if slug=='watch':
    video=video_schema()
    sitemap+=f'<video:video><video:thumbnail_loc>{video["thumbnailUrl"][0]}</video:thumbnail_loc><video:title>{escape(video["name"])}</video:title><video:description>{escape(video["description"])}</video:description><video:content_loc>{video["contentUrl"]}</video:content_loc><video:duration>17</video:duration></video:video>'
