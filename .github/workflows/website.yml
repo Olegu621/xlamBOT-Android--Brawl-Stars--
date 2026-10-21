@@ -20,4 +20,5 @@ jobs:
       - name: Check JavaScript
         run: |
           node --check docs/app.js
+          node --check docs/tour.js
           node --check docs/guide.js
