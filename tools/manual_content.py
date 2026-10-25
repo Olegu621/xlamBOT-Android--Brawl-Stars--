@@ -4,7 +4,7 @@ from html import escape
 import re
 
 UPDATED = '2026-10-25'
-VERSION = '1.2.0'
+VERSION = '1.2.1'
 
 # Each chapter keeps stable section anchors for support links and search results.
 CHAPTERS = [{'slug': 'guide-start',
@@ -531,7 +531,7 @@ CHAPTERS = [{'slug': 'guide-start',
                 'отчёт.</p>'),
                ('version',
                 'Версия руководства и актуальность',
-                '<p>Руководство обновлено для <strong>1.2.0</strong> от 25.10.2026: новое меню, Autododge Free/Plus, бесплатная смена по +N и рефералка без '
+                '<p>Руководство обновлено для <strong>1.2.1</strong> от 25.10.2026: новое меню, Autododge Free/Plus, бесплатная смена по +N и рефералка без '
                 'пробного периода. Старые статьи и записи игры могут показывать предыдущий внешний вид.</p><p><a href="../updates/#v120">Что изменилось в 1.2 '
                 '→</a>. Если в твоём APK другие названия, сначала проверь номер версии.</p>')]}]
 
@@ -556,13 +556,13 @@ def pages():
         for anchor,title,body in chapter['sections']:
             plain=escape(re.sub('<[^>]+>',' ',body))
             search.append(f'<li data-manual-entry><a href="../{chapter["slug"]}/#{anchor}"><small>{escape(chapter["label"])}</small><strong>{escape(title)}</strong></a><span class="manual-search-text" hidden>{plain}</span></li>')
-    hub='''<div class="manual-meta"><span>Версия приложения 1.2.0</span><span>10 глав · пошаговые инструкции</span><span>Обновлено 25.10.2026</span></div>
+    hub='''<div class="manual-meta"><span>Версия приложения 1.2.1</span><span>10 глав · пошаговые инструкции</span><span>Обновлено 25.10.2026</span></div>
 <div class="manual-search" data-manual-search hidden><label for="manual-query">Найти настройку или проблему</label><div class="manual-search-row"><input id="manual-query" type="search" placeholder="Например: unknown, очередь, 3 часа" autocomplete="off" aria-controls="manual-results" aria-describedby="manual-search-hint"><button type="button" data-clear-search>Очистить</button></div><p id="manual-search-hint">Поиск по всем главам. Введи несколько слов: «нет кадра» или «смена бойца».</p><p id="manual-search-status" role="status" aria-live="polite"></p><ul id="manual-results" hidden>'''+''.join(search)+'''</ul></div>
 <noscript><p class="guide-tip">Все главы доступны ниже без JavaScript. Для поиска по странице используй поиск браузера.</p></noscript>
 <section id="routes"><h2>С чего начать</h2><div class="manual-routes"><a href="../guide-start/#first-match">Первый запуск →</a><a href="../guide-errors/#unknown">Стоит или пишет unknown →</a><a href="../guide-queue/#rotation">Нужна смена бойцов →</a><a href="../guide-plus/#activate">Подключить Plus →</a></div></section>
 <section id="chapters"><h2>Полное руководство xlamBOT</h2><div class="manual-grid">'''+cards+'''</div></section>
 <section id="reading"><h2>Как пользоваться руководством</h2><p>Главы можно читать по порядку или открывать нужную по симптому. В каждой есть оглавление и ссылки на соседние темы. Кнопка рядом с заголовком копирует прямую ссылку на раздел — удобно, когда помогаешь другому пользователю.</p><p>На страницах глав есть печать: через системное окно браузера можно сохранить инструкцию в PDF. Поиск работает локально в браузере и не отправляет запросы на сервер.</p><p>Короткие инструкции остаются на страницах <a href="../install/">установки</a> и <a href="../help/">помощи</a>; здесь описаны детали, значения настроек, примеры очереди и порядок диагностики.</p></section>'''
-    result={'guide':{'title':'Документация xlamBOT — полное руководство бота для Android','description':'Подробная документация xlamBOT 1.2.0: установка, разрешения, захват Brawl Stars, настройки, очередь бойцов, Plus, ускорение, ошибки и отчёты.','heading':'Документация xlamBOT','label':'Документация','lead':'От первого запуска до настройки очереди и разбора ошибок. Все инструкции собраны по задачам, с поиском по полному руководству.','body':hub,'manual':True,'modified':UPDATED}}
+    result={'guide':{'title':'Документация xlamBOT — полное руководство бота для Android','description':'Подробная документация xlamBOT 1.2.1: установка, разрешения, захват Brawl Stars, настройки, очередь бойцов, Plus, ускорение, ошибки и отчёты.','heading':'Документация xlamBOT','label':'Документация','lead':'От первого запуска до настройки очереди и разбора ошибок. Все инструкции собраны по задачам, с поиском по полному руководству.','body':hub,'manual':True,'modified':UPDATED}}
     for index,chapter in enumerate(CHAPTERS):
         result[chapter['slug']]={'title':chapter['label']+' — руководство xlamBOT','description':chapter['description'],'heading':'xlamBOT: '+chapter['label'].lower(),'label':chapter['label'],'lead':chapter['lead'],'body':chapter_body(chapter,index),'manual':True,'chapter':index,'modified':UPDATED}
     return result
