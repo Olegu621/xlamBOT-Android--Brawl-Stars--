@@ -4,7 +4,7 @@ from html import escape
 import re
 
 UPDATED = '2026-10-25'
-VERSION = '1.2.1'
+VERSION = '1.2.3'
 
 # Each chapter keeps stable section anchors for support links and search results.
 CHAPTERS = [{'slug': 'guide-start',
