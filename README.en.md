@@ -2,56 +2,60 @@
 
 **Free Android APK with screen recognition, movement, attacks, three play styles and brawler queues.**
 
-[Download and website](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/en/) · [Latest APK](https://github.com/Olegu621/xlamBOT-Android--Brawl-Stars--/releases/latest/download/xlamBOT.apk) · [Release notes](https://github.com/Olegu621/xlamBOT-Android--Brawl-Stars--/releases/latest) · [Русский](README.md)
+[Download APK](https://github.com/Olegu621/xlamBOT-Android--Brawl-Stars--/releases/latest/download/xlamBOT.apk) · [Website](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/en/) · [Latest release](https://github.com/Olegu621/xlamBOT-Android--Brawl-Stars--/releases/latest) · [Русский](README.md)
 
-[Watch actual gameplay](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/watch/) · [Version history (RU)](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/updates/)
+[![Actual xlamBOT gameplay — click to watch](docs/assets/gameplay.webp)](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/watch/)
 
-**[Full user manual (Russian)](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/guide/)** — ten chapters covering setup, controls, capture, brawler queues, performance, Plus, troubleshooting and local data. Includes local search, shareable section links and browser print/PDF support.
+**[▶ Watch 17 seconds of actual gameplay](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/watch/)** — a recorded example, not a guaranteed result. No root or permanently connected PC is required. Keep Brawl Stars visible.
 
-[![xlamBOT running in Brawl Stars](docs/assets/social.jpg)](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/en/)
+## New in 1.2.2
 
-xlamBOT reads the game screen and controls touches directly on Android. No root or permanently connected PC is required. Supports Android 8+, ARM64, ARMv7 and x86_64.
+**Vince** joins the 108-profile catalogue, app picker and queues with a portrait, ranged attack/Super profile and English/Russian name matching. Vince is not unlocked on the developer's account, so a live Vince match has not been verified. Dedicated caterpillar/moth detection is not included. [Brawler catalogue (RU)](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/brawlers/).
+
+After opening the chosen brawler card, SELECT no longer waits for a matching skin title.
+
+The redesigned 1.2 interface and Free net-trophy rotation are retained, along with 1.2.1 launcher recovery, pause in other apps and pause-aware online counts. [Release history (RU)](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/updates/).
+
+[![Actual native xlamBOT 1.2 interface](docs/assets/screens/panel-v12.webp)](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/guide-panel/)
 
 ## Quick start
 
-1. Download the APK from Releases. Install over the existing version when updating to preserve local settings and history.
-2. Enable the xlamBOT Accessibility service and floating overlay.
-3. Connect the game image source. Android 11+ supports Accessibility screenshots; Android 8–10 uses system screen sharing.
-4. For your first test, use **English in Brawl Stars, Trio Showdown and default control positions**. Choose the correct brawler and style in xlamBOT.
-5. Open regular Brawl Stars and start from the floating panel. Keep the game visible.
+1. Install the APK from Releases. Update over the existing version to preserve settings, queues and history.
+2. Enable xlamBOT Accessibility and the floating overlay.
+3. Connect the image source. Android 11+ supports Accessibility screenshots; Android 8–10 uses system screen sharing. Supported Android 14+ systems can capture one app.
+4. First test: **English in Brawl Stars, Trio Showdown and default controls**. Select the same brawler in xlamBOT and use the balanced style.
+5. Open regular Brawl Stars, start the bot and check movement, attacks and the next match.
 
-After updating, turn the Accessibility service off and on again. On supported Android 14+ systems, the screen-sharing picker can capture just Brawl Stars. This does not enable background or locked-screen play.
+After updating, switch the Accessibility service off/on and reconnect the image source if needed. APK supports Android 8+, ARM64, ARMv7 and x86_64; actual compatibility depends on the device. [Setup guide (RU)](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/install/).
 
 ## Free and Plus
 
 | Feature | Free | Plus |
 | --- | :---: | :---: |
 | Movement, attacks, abilities and three play styles | Yes | Yes |
-| Basic dodging, brawler queues and match statistics | Yes | Yes |
-| Improved dodging and optional predictive aiming | — | Yes |
-| Direct GPU / adaptive NNAPI and 540p battle capture | — | Yes |
-| Bush tactics, power-cube boxes and collection | — | Yes |
-| Switch brawlers after a net +N trophy gain | Yes | Yes |
-| Occasional pins during quiet moments | — | Yes |
+| Normal Autododge, gas avoidance, queues and statistics | Yes | Yes |
+| Switch after matches or a net +N trophy gain | Yes | Yes |
+| Enhanced Autododge and optional predictive AutoAim | — | Yes |
+| Bush tactics, attacking boxes and collecting power cubes | — | Yes |
+| Faster reaction, optional GPU / NNAPI on supported devices | — | Yes |
+| Occasional pins in quiet moments | — | Yes |
 
-**Plus costs 50 Telegram Stars for 30 days, renewed manually.** Trials have been removed with 1.2; existing paid, VIP and referral access is preserved. Link your phone in **xlamBOT → Plus → Telegram** and open [@xlambottt_bot](https://t.me/xlambottt_bot). Each five new referred users who enter the bot and confirm @xlamModz membership earn the inviter ten additional Plus days. Telegram/Mini App access requires channel membership; Android gameplay does not.
+**Plus: 50 Telegram Stars for 30 days**, renewed manually with no automatic charges. No trial. Each five new qualified referrals earn the inviter ten additional Plus days. Link your phone and manage Plus in [@xlambottt_bot](https://t.me/xlambottt_bot?start=plus). [Terms and instructions (RU)](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/guide-plus/).
 
-Hardware acceleration depends on the device and drivers. Speed and recognition results are compared before keeping an accelerator, with CPU fallback when needed. No particular game FPS or trophy gain is promised.
+Hardware acceleration is device/driver-dependent, with CPU fallback. Background and locked-screen play are not supported. Android gameplay does not require Telegram channel membership.
 
-## Support and device reports
+## Documentation and support
 
-[Open a device report](https://github.com/Olegu621/xlamBOT-Android--Brawl-Stars--/issues/new?template=bug-en.yml) with the model, Android version, xlamBOT version, capture source, brawler/mode, steps to reproduce, recent log lines and a short recording. Working-device reports are welcome too. Do not include passwords, tokens or payment data.
+- [Full manual with search (RU)](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/guide/)
+- [Device compatibility and test evidence (RU)](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/compatibility/)
+- [Capture and Android permissions (RU)](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/guide-capture/)
+- [unknown, disconnects and brawler selection (RU)](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/guide-errors/)
+- [Open an English device report](https://github.com/Olegu621/xlamBOT-Android--Brawl-Stars--/issues/new?template=bug-en.yml)
 
-For Connection lost / RETRY LOGIN, install 1.1.2 or newer. For other problems, see the [help center (Russian)](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/help/).
+Include phone model, Android/firmware, xlamBOT version, capture source, brawler/mode, reproduction steps and recent logs. Working-device reports are welcome. Do not include passwords, tokens or payment details.
 
-## Repository contents
+## About this repository
 
-This is the public **APK releases, documentation and GitHub Pages** repository. Android app sources, signing keys, model files and crash symbols are private. APK updates are manual. [Third-party notices](THIRD-PARTY-NOTICES.md).
+Public **APK releases, documentation and GitHub Pages** for xlamBOT by Olegu621. Android application sources, signing keys, models and crash symbols are private. Updates are manual.
 
-Star the repository to bookmark it; use **Watch → Custom → Releases** for updates. Reproducible reports help improve compatibility.
-
-Independent project. Not affiliated with Supercell. Game names and images belong to their respective owners.
-
-## New in 1.2
-
-Unified dark/lime controls, animated level selectors, a tile-based picker, redesigned queues, statistics and Plus. Autododge is Off / Normal (Free) / Enhanced (Plus). Net-trophy rotation is now Free. [See the current interface](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/guide-panel/).
+Star to bookmark; **Watch → Custom → Releases** for APK updates. Independent project, not affiliated with Supercell. Game names and artwork belong to their respective owners. [Third-party notices](THIRD-PARTY-NOTICES.md).

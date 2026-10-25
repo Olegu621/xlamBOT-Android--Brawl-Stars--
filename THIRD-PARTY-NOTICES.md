@@ -17,3 +17,5 @@
 ## Website fonts
 
 The website bundles unmodified Manrope and Unbounded variable WOFF2 fonts distributed by Google Fonts under the SIL Open Font License 1.1. Original copyright notices and licenses are included in `docs/assets/fonts/OFL-manrope.txt` and `docs/assets/fonts/OFL-unbounded.txt`. These fonts are part of the website assets, independently of Android application components listed above.
+
+Vince portrait (`docs/assets/vince.png`) is an unmodified Supercell support image: https://support.supercell.com/images/BS-Vince.png?v=1787919602 . Brawl Stars character artwork belongs to Supercell.

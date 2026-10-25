@@ -87,6 +87,16 @@ def check():
     for name in re.findall(r'url\(([^)]+)\)',(font_dir/'fonts.css').read_text(encoding='utf-8')):
         assert (font_dir/name).read_bytes().startswith(b'wOF2'),name
     assert (ROOT/'docs/index.html').read_text(encoding='utf-8').count('name="google-site-verification"')==1
+    catalog=json.loads((ROOT/'tools/brawlers.json').read_text(encoding='utf-8'))
+    identities=[item['id'] for item in catalog]
+    assert len(identities)==len(set(identities)) and 'vince' in identities
+    assert all(set(item)=={'id','name'} for item in catalog),'Only public names may be exported'
+    catalog_html=(ROOT/'docs/brawlers/index.html').read_text(encoding='utf-8')
+    assert catalog_html.count('<li data-brawler=')==len(catalog)
+    assert all('data-brawler="'+identity+' ' in catalog_html for identity in identities)
+    for readme in ('README.md','README.en.md'):
+        for asset in re.findall(r'\]\((docs/[^)]+)\)',(ROOT/readme).read_text(encoding='utf-8')):
+            assert (ROOT/asset).is_file(),(readme,asset)
     print(f'PASS {len(indexed)} indexable pages + 404: unique metadata, local fonts, JSON-LD, links and video sitemap')
 
 if __name__=='__main__':check()

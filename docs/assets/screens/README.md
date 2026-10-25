@@ -11,3 +11,7 @@ These are optimized WebP copies of real screenshots retained during development 
 - `phone.webp`: portrait layout and preparation controls, version 1.0.8.
 
 Only image compression was applied. Performance, trophy totals and UI version labels in the images were not altered. Visible bot FPS values refer to analysis throughput, not the game's rendering rate. No screenshot establishes a win rate or guarantees a gameplay result.
+
+## Current 1.2 interface
+
+`panel-v12.webp`, `brawlers-v12.webp` and `plus-v12.webp` are compressed copies of actual native 1.2 panel screenshots. No UI, text, counters or account information was edited. They document the 1.2 interface, not Vince gameplay.

@@ -1,0 +1,60 @@
+name: Устройство работает
+description: Подтверди работу xlamBOT на своём телефоне — поможем другим с выбором настроек.
+title: "[Устройство работает] "
+body:
+  - type: markdown
+    attributes:
+      value: "Спасибо за проверку! Указывай только то, что проверил сам. Не добавляй Telegram ID, платёжные данные, токены и пароли."
+  - type: input
+    id: model
+    attributes:
+      label: Модель телефона или планшета
+      placeholder: Полное название модели
+    validations:
+      required: true
+  - type: input
+    id: android
+    attributes:
+      label: Android и оболочка
+      placeholder: Например, Android 16 / HyperOS
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Версия xlamBOT
+      placeholder: Например, 1.2.2
+    validations:
+      required: true
+  - type: dropdown
+    id: capture
+    attributes:
+      label: Получение изображения
+      options:
+        - Автоматически / не знаю
+        - Снимки через специальные возможности
+        - Системный захват всего экрана
+        - Системный захват одного приложения
+    validations:
+      required: true
+  - type: input
+    id: mode
+    attributes:
+      label: Боец и игровой режим
+    validations:
+      required: true
+  - type: dropdown
+    id: checked
+    attributes:
+      label: Что удалось проверить
+      options:
+        - Один матч — движение и атаки
+        - Полный цикл — матч, результат и следующий матч
+        - Полный цикл и смену бойца в очереди
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Дополнительные настройки и замечания
+      description: "Можно добавить длительность проверки и короткую запись, скрыв личные данные."
