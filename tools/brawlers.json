@@ -1,0 +1,434 @@
+[
+  {
+    "id": "8bit",
+    "name": "8-Бит"
+  },
+  {
+    "id": "alli",
+    "name": "Alli"
+  },
+  {
+    "id": "amber",
+    "name": "Амбер"
+  },
+  {
+    "id": "angelo",
+    "name": "Анджело"
+  },
+  {
+    "id": "ash",
+    "name": "Эш"
+  },
+  {
+    "id": "barley",
+    "name": "Барли"
+  },
+  {
+    "id": "bea",
+    "name": "Беа"
+  },
+  {
+    "id": "belle",
+    "name": "Белль"
+  },
+  {
+    "id": "berry",
+    "name": "Берри"
+  },
+  {
+    "id": "bibi",
+    "name": "Биби"
+  },
+  {
+    "id": "bo",
+    "name": "Бо"
+  },
+  {
+    "id": "bolt",
+    "name": "Bolt"
+  },
+  {
+    "id": "bonnie",
+    "name": "Бонни"
+  },
+  {
+    "id": "brock",
+    "name": "Брок"
+  },
+  {
+    "id": "bull",
+    "name": "Булл"
+  },
+  {
+    "id": "buster",
+    "name": "Бастер"
+  },
+  {
+    "id": "buzz",
+    "name": "Базз"
+  },
+  {
+    "id": "byron",
+    "name": "Байрон"
+  },
+  {
+    "id": "carl",
+    "name": "Карл"
+  },
+  {
+    "id": "charlie",
+    "name": "Чарли"
+  },
+  {
+    "id": "chester",
+    "name": "Честер"
+  },
+  {
+    "id": "chuck",
+    "name": "Чак"
+  },
+  {
+    "id": "clancy",
+    "name": "Клэнси"
+  },
+  {
+    "id": "colette",
+    "name": "Колетт"
+  },
+  {
+    "id": "colt",
+    "name": "Кольт"
+  },
+  {
+    "id": "cordelius",
+    "name": "Корделиус"
+  },
+  {
+    "id": "cosmo",
+    "name": "Космо"
+  },
+  {
+    "id": "crow",
+    "name": "Ворон"
+  },
+  {
+    "id": "damian",
+    "name": "Damian"
+  },
+  {
+    "id": "darryl",
+    "name": "Дэррил"
+  },
+  {
+    "id": "doug",
+    "name": "Даг"
+  },
+  {
+    "id": "draco",
+    "name": "Драко"
+  },
+  {
+    "id": "dynamike",
+    "name": "Динамайк"
+  },
+  {
+    "id": "edgar",
+    "name": "Эдгар"
+  },
+  {
+    "id": "elprimo",
+    "name": "Эль Примо"
+  },
+  {
+    "id": "emz",
+    "name": "Эмз"
+  },
+  {
+    "id": "eve",
+    "name": "Ева"
+  },
+  {
+    "id": "fang",
+    "name": "Фэнг"
+  },
+  {
+    "id": "finx",
+    "name": "Финкс"
+  },
+  {
+    "id": "frank",
+    "name": "Фрэнк"
+  },
+  {
+    "id": "gale",
+    "name": "Гэйл"
+  },
+  {
+    "id": "gene",
+    "name": "Джин"
+  },
+  {
+    "id": "gigi",
+    "name": "Gigi"
+  },
+  {
+    "id": "glowy",
+    "name": "Glowy"
+  },
+  {
+    "id": "gray",
+    "name": "Грей"
+  },
+  {
+    "id": "griff",
+    "name": "Грифф"
+  },
+  {
+    "id": "grom",
+    "name": "Гром"
+  },
+  {
+    "id": "gus",
+    "name": "Гас"
+  },
+  {
+    "id": "hank",
+    "name": "Хэнк"
+  },
+  {
+    "id": "jacky",
+    "name": "Джеки"
+  },
+  {
+    "id": "jaeyong",
+    "name": "Jae-Yong"
+  },
+  {
+    "id": "janet",
+    "name": "Джанет"
+  },
+  {
+    "id": "jessie",
+    "name": "Джесси"
+  },
+  {
+    "id": "juju",
+    "name": "Джуджу"
+  },
+  {
+    "id": "kaze",
+    "name": "Кадзэ"
+  },
+  {
+    "id": "kenji",
+    "name": "Кэндзи"
+  },
+  {
+    "id": "kit",
+    "name": "Кит"
+  },
+  {
+    "id": "larrylawrie",
+    "name": "Ларри и Лори"
+  },
+  {
+    "id": "leon",
+    "name": "Леон"
+  },
+  {
+    "id": "lily",
+    "name": "Лили"
+  },
+  {
+    "id": "lola",
+    "name": "Лола"
+  },
+  {
+    "id": "lou",
+    "name": "Лу"
+  },
+  {
+    "id": "lumi",
+    "name": "Луми"
+  },
+  {
+    "id": "maisie",
+    "name": "Мэйси"
+  },
+  {
+    "id": "mandy",
+    "name": "Мэнди"
+  },
+  {
+    "id": "max",
+    "name": "Макс"
+  },
+  {
+    "id": "meeple",
+    "name": "Мипл"
+  },
+  {
+    "id": "meg",
+    "name": "Мэг"
+  },
+  {
+    "id": "melodie",
+    "name": "Мелоди"
+  },
+  {
+    "id": "mico",
+    "name": "Мико"
+  },
+  {
+    "id": "mina",
+    "name": "Mina"
+  },
+  {
+    "id": "moe",
+    "name": "Мо"
+  },
+  {
+    "id": "mortis",
+    "name": "Мортис"
+  },
+  {
+    "id": "mrp",
+    "name": "Мистер П"
+  },
+  {
+    "id": "najia",
+    "name": "Najia"
+  },
+  {
+    "id": "nani",
+    "name": "Нани"
+  },
+  {
+    "id": "nita",
+    "name": "Нита"
+  },
+  {
+    "id": "nori",
+    "name": "Nori"
+  },
+  {
+    "id": "ollie",
+    "name": "Олли"
+  },
+  {
+    "id": "otis",
+    "name": "Отис"
+  },
+  {
+    "id": "pam",
+    "name": "Пэм"
+  },
+  {
+    "id": "pearl",
+    "name": "Перл"
+  },
+  {
+    "id": "penny",
+    "name": "Пенни"
+  },
+  {
+    "id": "pierce",
+    "name": "Pierce"
+  },
+  {
+    "id": "piper",
+    "name": "Пайпер"
+  },
+  {
+    "id": "poco",
+    "name": "Поко"
+  },
+  {
+    "id": "rico",
+    "name": "Рико"
+  },
+  {
+    "id": "rosa",
+    "name": "Роза"
+  },
+  {
+    "id": "rt",
+    "name": "Р-Т"
+  },
+  {
+    "id": "ruffs",
+    "name": "Гавс"
+  },
+  {
+    "id": "sam",
+    "name": "Сэм"
+  },
+  {
+    "id": "sandy",
+    "name": "Сэнди"
+  },
+  {
+    "id": "shade",
+    "name": "Шейд"
+  },
+  {
+    "id": "shelly",
+    "name": "Шелли"
+  },
+  {
+    "id": "sirius",
+    "name": "Sirius"
+  },
+  {
+    "id": "spike",
+    "name": "Спайк"
+  },
+  {
+    "id": "sprout",
+    "name": "Спраут"
+  },
+  {
+    "id": "squeak",
+    "name": "Скуик"
+  },
+  {
+    "id": "starrnova",
+    "name": "Starr Nova"
+  },
+  {
+    "id": "stu",
+    "name": "Сту"
+  },
+  {
+    "id": "surge",
+    "name": "Вольт"
+  },
+  {
+    "id": "tara",
+    "name": "Тара"
+  },
+  {
+    "id": "tick",
+    "name": "Тик"
+  },
+  {
+    "id": "trunk",
+    "name": "Trunk"
+  },
+  {
+    "id": "vince",
+    "name": "Винс"
+  },
+  {
+    "id": "wendy",
+    "name": "Wendy"
+  },
+  {
+    "id": "willow",
+    "name": "Виллоу"
+  },
+  {
+    "id": "ziggy",
+    "name": "Ziggy"
+  }
+]

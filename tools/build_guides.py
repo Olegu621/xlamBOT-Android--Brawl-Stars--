@@ -4,6 +4,7 @@ from pathlib import Path
 from html import escape
 import json,re
 from manual_content import pages as manual_pages, chapter_nav
+from discovery_content import pages as discovery_pages
 
 ROOT = Path(__file__).resolve().parent.parent
 DOCS = ROOT / 'docs'
@@ -90,6 +91,12 @@ PAGES.update({
 })
 
 PAGES.update(manual_pages())
+PAGES.update(discovery_pages())
+PAGES['updates']['body'] = '<section id="v122" class="guide-card"><p>25.10.2026</p><h2>1.2.2 — Винс и поиск бойцов</h2><p>Добавлен Винс: портрет, профиль атаки и Супера, выбор и очередь. В поиске панели доступны русские и английские имена. Старые настройки и собственные параметры бойцов сохраняются.</p><p>Бой за Винса на аккаунте разработчика не проверялся: боец не разблокирован. Отдельное распознавание гусениц и мотыльков не заявлено. <a href="../brawlers/#vince">Подробности профиля →</a></p></section>' + PAGES['updates']['body']
+PAGES['guide-panel']['body'] = '<figure class="guide-shot"><img src="../assets/screens/panel-v12.webp" width="1280" height="720" alt="Панель xlamBOT серии 1.2: функции, очередь, статистика и Plus" loading="lazy"><figcaption>Реальный экран новой панели серии 1.2. Ниже — назначение вкладок и кнопок.</figcaption></figure>' + PAGES['guide-panel']['body']
+PAGES['guide-queue']['body'] = '<figure class="guide-shot"><img src="../assets/screens/brawlers-v12.webp" width="1280" height="720" alt="Плитки бойцов в меню xlamBOT: поиск и выбор персонажа" loading="lazy"><figcaption>Выбор бойца в новой панели. <a href="../brawlers/">Полный каталог и Винс →</a></figcaption></figure>' + PAGES['guide-queue']['body']
+PAGES['guide-plus']['body'] = '<figure class="guide-shot"><img src="../assets/screens/plus-v12.webp" width="1280" height="720" alt="Экран Plus в новой панели xlamBOT: функции и подключение через Telegram" loading="lazy"><figcaption>Экран Plus серии 1.2. Привязка и покупка выполняются через Telegram; ниже описаны срок, продление и рефералка.</figcaption></figure>' + PAGES['guide-plus']['body']
+
 for _page in PAGES.values():
  _page["modified"]="2026-10-25"
 
@@ -145,6 +152,8 @@ def build():
 <body><a class="skip" href="#main">{'Skip to content' if en else 'К содержимому'}</a><header class="header wrap"><a class="brand" href="../"><img src="../assets/mark.svg" width="36" height="36" alt=""><span>xlam<span class="brand-light">BOT</span></span><span class="platform">ANDROID</span></a><nav aria-label="{'Navigation' if en else 'Навигация'}">{links}</nav><a class="header-tg" href="https://t.me/xlamModz">Telegram ↗</a><details class="mobile-menu"><summary>{'Menu' if en else 'Меню'} <span aria-hidden="true">≡</span></summary><nav aria-label="{'Mobile navigation' if en else 'Меню телефона'}">{links}<a href="{APK}">{cta}</a></nav></details></header>
 <main class="wrap guide-page{' manual-page' if page.get('manual') else ''}" id="main"><nav class="breadcrumbs" aria-label="{'Breadcrumb' if en else 'Хлебные крошки'}"><a href="../">xlamBOT</a><span aria-hidden="true">/</span>{chapter_crumb}<span>{page['label']}</span></nav><p class="guide-kicker">XLAMBOT / ANDROID</p><h1>{page['heading']}</h1><p class="guide-lead">{page['lead']}</p>{tools}{manual}{actions}{page['body']}<div class="guide-bottom"><nav class="guide-links" aria-label="{'More' if en else 'Дальше'}"><a href="../guide/">{'Full manual (RU)' if en else 'Полная документация →'}</a><a href="../install/">{'Installation guide (RU)' if en else 'Как установить →'}</a><a href="../features/">{'Free and Plus (RU)' if en else 'Все функции и Plus →'}</a><a href="../help/">{'Troubleshooting (RU)' if en else 'Решение проблем →'}</a><a href="../watch/">{'Gameplay video (RU)' if en else 'Запись игры →'}</a><a href="../updates/">{'Updates (RU)' if en else 'Обновления APK →'}</a></nav><p><a href="{REPO}">GitHub</a> · <a href="{REPO}/releases/latest">{'Release notes' if en else 'Что нового'}</a> · <a href="../">{'Back to home' if en else 'На главную'}</a></p><p class="maintainer">{'Maintained by' if en else 'Проект поддерживает'} <a href="https://github.com/Olegu621">Olegu621</a> · {'Updated' if en else 'Обновлено'}: <time datetime="{modified}">{date_label}</time></p></div></main><footer class="footer wrap"><a class="brand" href="../">xlamBOT</a><p>{'Independent project. Not affiliated with Supercell.' if en else 'Самостоятельный проект. Не связан с Supercell.'}</p><a href="https://t.me/xlamModz">@xlamModz ↗</a></footer></body></html>
 '''
+  if slug=='brawlers':html=html.replace('</head>','<script src="../catalog.js" defer></script></head>')
+  html=html.replace('<a href="../updates/">', '<a href="../compatibility/">Совместимость →</a><a href="../brawlers/">Каталог бойцов →</a><a href="../updates/">')
   directory=DOCS/slug;directory.mkdir(exist_ok=True)
   (directory/'index.html').write_text(html,encoding='utf-8')
  sitemap='<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">\n'
