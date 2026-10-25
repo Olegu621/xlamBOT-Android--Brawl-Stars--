@@ -12,6 +12,8 @@
 
 **Vince** joins the 108-profile catalogue, app picker and queues with a portrait, ranged attack/Super profile and English/Russian name matching. Vince is not unlocked on the developer's account, so a live Vince match has not been verified. Dedicated caterpillar/moth detection is not included. [Brawler catalogue (RU)](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/brawlers/).
 
+After opening the chosen brawler card, SELECT no longer waits for a matching skin title.
+
 The redesigned 1.2 interface and Free net-trophy rotation are retained, along with 1.2.1 launcher recovery, pause in other apps and pause-aware online counts. [Release history (RU)](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/updates/).
 
 [![Actual native xlamBOT 1.2 interface](docs/assets/screens/panel-v12.webp)](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/guide-panel/)
