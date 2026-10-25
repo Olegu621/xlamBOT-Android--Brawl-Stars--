@@ -8,7 +8,11 @@
 
 **[▶ Watch 17 seconds of actual gameplay](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/watch/)** — a recorded example, not a guaranteed result. No root or permanently connected PC is required. Keep Brawl Stars visible.
 
-## New in 1.2.2
+## Current release: 1.2.3
+
+Fixes a live-player movement stall in a corridor between gas and a wall with a safe passage. Control calibration remains suspended during respawn and resumes with live-player evidence. Local logs explain movement waits.
+
+Retained from 1.2.2:
 
 **Vince** joins the 108-profile catalogue, app picker and queues with a portrait, ranged attack/Super profile and English/Russian name matching. Vince is not unlocked on the developer's account, so a live Vince match has not been verified. Dedicated caterpillar/moth detection is not included. [Brawler catalogue (RU)](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/brawlers/).
 
