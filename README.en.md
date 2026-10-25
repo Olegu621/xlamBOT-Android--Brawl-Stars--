@@ -31,10 +31,10 @@ After updating, turn the Accessibility service off and on again. On supported An
 | Improved dodging and optional predictive aiming | — | Yes |
 | Direct GPU / adaptive NNAPI and 540p battle capture | — | Yes |
 | Bush tactics, power-cube boxes and collection | — | Yes |
-| Switch brawlers after a net +N trophy gain | — | Yes |
+| Switch brawlers after a net +N trophy gain | Yes | Yes |
 | Occasional pins during quiet moments | — | Yes |
 
-**Plus costs 50 Telegram Stars for 30 days, renewed manually.** One free **72-hour trial per Telegram account**, without payment or automatic charges. Open **xlamBOT → Plus → Telegram**, activate access in [@xlambottt_bot](https://t.me/xlambottt_bot?start=plus), then return and refresh access. Requires 1.1.0 or newer.
+**Plus costs 50 Telegram Stars for 30 days, renewed manually.** Trials have been removed with 1.2; existing paid, VIP and referral access is preserved. Link your phone in **xlamBOT → Plus → Telegram** and open [@xlambottt_bot](https://t.me/xlambottt_bot). Each five new referred users who enter the bot and confirm @xlamModz membership earn the inviter ten additional Plus days. Telegram/Mini App access requires channel membership; Android gameplay does not.
 
 Hardware acceleration depends on the device and drivers. Speed and recognition results are compared before keeping an accelerator, with CPU fallback when needed. No particular game FPS or trophy gain is promised.
 
@@ -51,3 +51,7 @@ This is the public **APK releases, documentation and GitHub Pages** repository. 
 Star the repository to bookmark it; use **Watch → Custom → Releases** for updates. Reproducible reports help improve compatibility.
 
 Independent project. Not affiliated with Supercell. Game names and images belong to their respective owners.
+
+## New in 1.2
+
+Unified dark/lime controls, animated level selectors, a tile-based picker, redesigned queues, statistics and Plus. Autododge is Off / Normal (Free) / Enhanced (Plus). Net-trophy rotation is now Free. [See the current interface](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/guide-panel/).
