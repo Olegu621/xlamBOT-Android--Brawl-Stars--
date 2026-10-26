@@ -4,7 +4,7 @@ from html import escape
 import re
 
 UPDATED = '2026-10-25'
-VERSION = '1.2.3'
+VERSION = '1.2.5'
 
 # Each chapter keeps stable section anchors for support links and search results.
 CHAPTERS = [{'slug': 'guide-start',
@@ -367,6 +367,7 @@ CHAPTERS = [{'slug': 'guide-start',
                 'Root и Shizuku для обычного запуска не нужны.</p><p>Сначала проверь Free на своём телефоне. Plus добавляет перечисленные функции; он не '
                 'является обещанием совместимости с любой прошивкой, любого FPS или гарантированного роста кубков.</p>')]},
  {'slug': 'guide-errors',
+  'modified': '2026-10-26',
   'label': 'Ошибки и восстановление',
   'description': 'Пошаговая диагностика xlamBOT: недействительный APK, unknown, AFK, нет движения и атак, no_frame, зависание после матча, RETRY LOGIN и '
                  'нативный сбой.',
@@ -380,6 +381,12 @@ CHAPTERS = [{'slug': 'guide-start',
                 'текст и источник прежней установки.</li><li>Если ошибка повторяется, приложи модель, версию Android, размер файла и снимок сообщения '
                 'установщика.</li></ol><p>Не начинай с удаления приложения или очистки его данных: это может стереть историю и очередь. Ошибка установки и '
                 'запрет специальных возможностей — разные ситуации.</p>'),
+               ('old-update',
+                'Ошибка обновления в старой версии',
+                '<p>Если в старом xlamBOT не работает встроенное обновление или в журнале появляется <strong>update_failed</strong>, '
+                'скачай актуальный APK с сайта и установи его поверх приложения. В текущей версии обновления устанавливаются вручную.</p>'
+                '<p><a href="../guide-updates/#old-updater">Пошаговое обновление без удаления настроек →</a>. '
+                'Если ошибку показывает уже системный установщик Android, используй раздел <a href="#invalid-package">выше</a>.</p>'),
                ('unknown',
                 'unknown / «Определяю экран» и AFK',
                 '<ol><li>Убедись, что это длительное состояние, а не короткий переход при загрузке.</li><li>Проверь свежесть изображения: выбран ли Brawl '
@@ -498,6 +505,7 @@ CHAPTERS = [{'slug': 'guide-start',
                 'длительность сессии. «Установилось» и «прошло десять полных циклов» — разные уровни проверки. Один отзыв не гарантирует работу на всех '
                 'версиях прошивки этой модели.</p>')]},
  {'slug': 'guide-updates',
+  'modified': '2026-10-26',
   'label': 'Обновление и переустановка',
   'description': 'Как обновить xlamBOT вручную без удаления данных, восстановить разрешения и изображение, проверить новую версию и сохранить сведения перед '
                  'переустановкой.',
@@ -509,6 +517,17 @@ CHAPTERS = [{'slug': 'guide-start',
                 'обновления.</li><li>Выключи и снова включи службу xlamBOT в специальных возможностях Android.</li><li>Проверь источник изображения. При '
                 'необходимости подключи его заново.</li><li>Сравни настройки, очередь и Plus-статус, затем проведи один полный контрольный '
                 'цикл.</li></ol><p>Обновления устанавливаются вручную. Встроенного автоматического скачивания и установки новых APK нет.</p>'),
+               ('old-updater',
+                'Старый xlamBOT пишет «Ошибка обновления»',
+                '<p>В старых сборках, включая 1.0.4, ещё может быть встроенная проверка обновлений. Если она завершается ошибкой '
+                'или в журнале указано <strong>update_failed</strong>, используй ручную установку актуального APK.</p>'
+                '<ol><li>Останови бота и открой <a href="../#download">официальную страницу скачивания</a>.</li>'
+                '<li>Скачай APK полностью, затем открой его из загрузок телефона. Установи поверх xlamBOT: удалять приложение '
+                'или очищать его данные для обычного обновления не нужно.</li>'
+                '<li>Открой новую версию, выключи и включи её службу в специальных возможностях, затем заново подключи изображение.</li>'
+                '<li>Проверь выбранного бойца и очередь. Запусти один контрольный матч и проверь переход к следующему.</li></ol>'
+                '<p>При конфликте подписи или сообщении «Пакет недействителен» сохрани точный текст, модель телефона и версию Android. '
+                'Не удаляй данные ради обхода ошибки: <a href="../guide-errors/#invalid-package">диагностика установки →</a>.</p>'),
                ('permissions',
                 'После обновления: что проверить',
                 '<ul><li>Версия на главной соответствует установленному релизу.</li><li>Управление и изображение подключены отдельно.</li><li>Выбран '
@@ -531,9 +550,10 @@ CHAPTERS = [{'slug': 'guide-start',
                 'отчёт.</p>'),
                ('version',
                 'Версия руководства и актуальность',
-                '<p>Руководство обновлено для <strong>1.2.1</strong> от 25.10.2026: новое меню, Autododge Free/Plus, бесплатная смена по +N и рефералка без '
-                'пробного периода. Старые статьи и записи игры могут показывать предыдущий внешний вид.</p><p><a href="../updates/#v120">Что изменилось в 1.2 '
-                '→</a>. Если в твоём APK другие названия, сначала проверь номер версии.</p>')]}]
+                f'<p>Текущая версия — <strong>{VERSION}</strong>. Инструкции описывают меню линейки 1.2, Autododge Free/Plus, бесплатную смену по +N '
+                'и рефералку без пробного периода. Раздел обновления дополнен 26.10.2026. Старые статьи и записи игры могут показывать предыдущий '
+                'внешний вид.</p><p><a href="../updates/#v125">Изменения 1.2.5: распознавание, восстановление изображения и движения →</a>. '
+                'Если в твоём APK другие названия, сначала проверь номер версии.</p>')]}]
 
 
 
@@ -556,15 +576,15 @@ def pages():
         for anchor,title,body in chapter['sections']:
             plain=escape(re.sub('<[^>]+>',' ',body))
             search.append(f'<li data-manual-entry><a href="../{chapter["slug"]}/#{anchor}"><small>{escape(chapter["label"])}</small><strong>{escape(title)}</strong></a><span class="manual-search-text" hidden>{plain}</span></li>')
-    hub='''<div class="manual-meta"><span>Версия приложения 1.2.1</span><span>10 глав · пошаговые инструкции</span><span>Обновлено 25.10.2026</span></div>
-<div class="manual-search" data-manual-search hidden><label for="manual-query">Найти настройку или проблему</label><div class="manual-search-row"><input id="manual-query" type="search" placeholder="Например: unknown, очередь, 3 часа" autocomplete="off" aria-controls="manual-results" aria-describedby="manual-search-hint"><button type="button" data-clear-search>Очистить</button></div><p id="manual-search-hint">Поиск по всем главам. Введи несколько слов: «нет кадра» или «смена бойца».</p><p id="manual-search-status" role="status" aria-live="polite"></p><ul id="manual-results" hidden>'''+''.join(search)+'''</ul></div>
+    hub=f'''<div class="manual-meta"><span>Версия приложения {VERSION}</span><span>10 глав · пошаговые инструкции</span><span>Обновлено 26.10.2026</span></div>
+<div class="manual-search" data-manual-search hidden><label for="manual-query">Найти настройку или проблему</label><div class="manual-search-row"><input id="manual-query" type="search" placeholder="Например: unknown, очередь, Plus" autocomplete="off" aria-controls="manual-results" aria-describedby="manual-search-hint"><button type="button" data-clear-search>Очистить</button></div><p id="manual-search-hint">Поиск по всем главам. Введи несколько слов: «нет кадра» или «смена бойца».</p><p id="manual-search-status" role="status" aria-live="polite"></p><ul id="manual-results" hidden>'''+''.join(search)+'''</ul></div>
 <noscript><p class="guide-tip">Все главы доступны ниже без JavaScript. Для поиска по странице используй поиск браузера.</p></noscript>
 <section id="routes"><h2>С чего начать</h2><div class="manual-routes"><a href="../guide-start/#first-match">Первый запуск →</a><a href="../guide-errors/#unknown">Стоит или пишет unknown →</a><a href="../guide-queue/#rotation">Нужна смена бойцов →</a><a href="../guide-plus/#activate">Подключить Plus →</a></div></section>
 <section id="chapters"><h2>Полное руководство xlamBOT</h2><div class="manual-grid">'''+cards+'''</div></section>
 <section id="reading"><h2>Как пользоваться руководством</h2><p>Главы можно читать по порядку или открывать нужную по симптому. В каждой есть оглавление и ссылки на соседние темы. Кнопка рядом с заголовком копирует прямую ссылку на раздел — удобно, когда помогаешь другому пользователю.</p><p>На страницах глав есть печать: через системное окно браузера можно сохранить инструкцию в PDF. Поиск работает локально в браузере и не отправляет запросы на сервер.</p><p>Короткие инструкции остаются на страницах <a href="../install/">установки</a> и <a href="../help/">помощи</a>; здесь описаны детали, значения настроек, примеры очереди и порядок диагностики.</p></section>'''
-    result={'guide':{'title':'Документация xlamBOT — полное руководство бота для Android','description':'Подробная документация xlamBOT 1.2.1: установка, разрешения, захват Brawl Stars, настройки, очередь бойцов, Plus, ускорение, ошибки и отчёты.','heading':'Документация xlamBOT','label':'Документация','lead':'От первого запуска до настройки очереди и разбора ошибок. Все инструкции собраны по задачам, с поиском по полному руководству.','body':hub,'manual':True,'modified':UPDATED}}
+    result={'guide':{'title':'Документация xlamBOT — полное руководство бота для Android','description':f'Подробная документация xlamBOT {VERSION}: установка, разрешения, захват Brawl Stars, настройки, очередь бойцов, Plus, ускорение, ошибки и отчёты.','heading':'Документация xlamBOT','label':'Документация','lead':'От первого запуска до настройки очереди и разбора ошибок. Все инструкции собраны по задачам, с поиском по полному руководству.','body':hub,'manual':True,'modified':'2026-10-26'}}
     for index,chapter in enumerate(CHAPTERS):
-        result[chapter['slug']]={'title':chapter['label']+' — руководство xlamBOT','description':chapter['description'],'heading':'xlamBOT: '+chapter['label'].lower(),'label':chapter['label'],'lead':chapter['lead'],'body':chapter_body(chapter,index),'manual':True,'chapter':index,'modified':UPDATED}
+        result[chapter['slug']]={'title':chapter['label']+' — руководство xlamBOT','description':chapter['description'],'heading':'xlamBOT: '+chapter['label'].lower(),'label':chapter['label'],'lead':chapter['lead'],'body':chapter_body(chapter,index),'manual':True,'chapter':index,'modified':chapter.get('modified',UPDATED)}
     return result
 
 def chapter_nav(current):
