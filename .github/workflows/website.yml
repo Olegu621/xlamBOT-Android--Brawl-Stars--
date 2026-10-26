@@ -23,3 +23,4 @@ jobs:
           node --check docs/tour.js
           node --check docs/guide.js
           node --check docs/catalog.js
+          node --check docs/share.js

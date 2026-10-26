@@ -7,7 +7,7 @@
 Бесплатный Android APK: распознавание экрана, движение, атаки, три стиля игры и очередь бойцов.
 
 [![Android 8+](https://img.shields.io/badge/Android-8%2B-3ddc84?logo=android&logoColor=white)](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/compatibility/)
-[![APK 1.2.3](https://img.shields.io/badge/APK-1.2.3-c4ff52)](https://github.com/Olegu621/xlamBOT-Android--Brawl-Stars--/releases/latest/download/xlamBOT.apk)
+[![APK 1.2.5](https://img.shields.io/badge/APK-1.2.5-c4ff52)](https://github.com/Olegu621/xlamBOT-Android--Brawl-Stars--/releases/latest/download/xlamBOT.apk)
 [![Telegram](https://img.shields.io/badge/Telegram-%40xlamModz-26a5e4?logo=telegram&logoColor=white)](https://t.me/xlamModz)
 [![Website checks](https://github.com/Olegu621/xlamBOT-Android--Brawl-Stars--/actions/workflows/website.yml/badge.svg)](https://github.com/Olegu621/xlamBOT-Android--Brawl-Stars--/actions/workflows/website.yml)
 
@@ -21,9 +21,13 @@
 
 Видео показывает движение и атаки с работающей панелью. Это отдельная запись, а не обещание такого же результата в каждом матче. Игра остаётся видимой; root и постоянно подключённый ПК не нужны.
 
-## Актуальная версия: 1.2.3
+## Актуальная версия: 1.2.5
 
-Исправлена остановка живого бойца между стеной и газом при наличии безопасного прохода. Во время возрождения карта больше не используется для повторного определения джойстика; после появления персонажа движение продолжается. В журнале доступны причины ожидания движения.
+Ускорено распознавание лобби и окон RELOAD / RETRY LOGIN. Выход из застревания учитывает движение персонажа относительно карты; проверки газа, стен и воды сохранены. Улучшено восстановление изображения после временного сбоя. Кнопки способностей проверяются по свежему кадру с повторным использованием найденного положения.
+
+[Что изменилось](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/updates/#v125) · [Видео, скриншоты и материалы для публикаций](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/media/)
+
+[▶ Новая 1.2.5 в настоящем матче — вертикальный ролик без музыки](docs/assets/promo-125.mp4)
 
 Сохранено из 1.2.2:
 

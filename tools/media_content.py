@@ -1,0 +1,32 @@
+"""Public assets and honest, reusable descriptions for community creators."""
+
+BASE='https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/'
+
+def pages():
+    return {'media': {
+        'title':'xlamBOT — видео игры, скриншоты и материалы для публикаций',
+        'description':'Официальные материалы xlamBOT: реальное видео игры Brawl Stars, скриншоты Android-панели, описание Free и Plus и ссылки для обзоров и друзей.',
+        'heading':'xlamBOT: покажи, как он играет', 'label':'Видео и материалы',
+        'lead':'Для друга, обзора или своего канала. Здесь — настоящая запись игры, экраны приложения и короткое описание без выдуманных результатов.',
+        'modified':'2026-10-26',
+        'body':'''<section class="guide-card"><h2>Новая 1.2.5 — в настоящем матче</h2>
+<video controls playsinline preload="none" poster="../assets/promo-125.jpg" width="1080" height="1920" style="width:100%;max-width:360px;height:auto;display:block;margin:auto;border-radius:16px"><source src="../assets/promo-125.mp4" type="video/mp4">Твой браузер не поддерживает видео. <a href="../assets/promo-125.mp4">Открыть MP4</a></video>
+<p>22 секунды непрерывной записи с работающим xlamBOT 1.2.5: движение, атаки и панель бота. Скорость игры сохранена, музыки нет. Вертикальный ролик подходит для короткой публикации; отдельный бой не гарантирует результат следующих матчей.</p><div class="guide-actions"><a class="button button-lime" href="../assets/promo-125.mp4" download="xlamBOT-1.2.5-vertical.mp4">Скачать вертикальный ролик ↓</a><a class="button button-outline" href="#share">Показать другу →</a></div></section>
+<section class="guide-card"><h2>Ещё одна запись игры</h2>
+<video controls playsinline preload="none" poster="../assets/video-cover.webp" width="854" height="382" style="width:100%;height:auto;border-radius:16px"><source src="../assets/gameplay.mp4" type="video/mp4">Твой браузер не поддерживает видео. <a href="../assets/gameplay.mp4">Открыть MP4</a></video>
+<p>17 секунд реального матча с работающей панелью xlamBOT. Запись показывает движение и атаки. Это демонстрация отдельного боя; результат следующих матчей может отличаться.</p>
+<div class="guide-actions"><a class="button button-lime" href="../assets/gameplay.mp4" download="xlamBOT-gameplay.mp4">Скачать видео MP4 ↓</a><a class="button button-outline" href="../watch/">Страница с видео →</a></div></section>
+<section id="share"><h2>Покажи другу</h2><p>Free скачивается бесплатно. Нужны Android 8+, разрешения на управление и изображение игры. Для первого запуска рекомендуем English в игре, Trio Showdown и стандартное управление.</p>
+<div class="guide-actions"><a class="button button-lime" href="https://t.me/share/url?url=https%3A%2F%2Folegu621.github.io%2FxlamBOT-Android--Brawl-Stars--%2F&amp;text=xlamBOT%20%E2%80%94%20%D0%B1%D0%BE%D1%82%20%D0%B4%D0%BB%D1%8F%20Brawl%20Stars%20%D0%BD%D0%B0%20Android.%20Free%20%D0%B1%D0%B5%D1%81%D0%BF%D0%BB%D0%B0%D1%82%D0%BD%D0%BE%2C%20%D0%B2%D0%B8%D0%B4%D0%B5%D0%BE%20%D0%B8%20%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0%20%D0%BF%D0%BE%20%D1%81%D1%81%D1%8B%D0%BB%D0%BA%D0%B5." target="_blank" rel="noopener noreferrer">Поделиться в Telegram ↗</a><button class="button button-outline" type="button" data-share-site hidden>Ещё способы поделиться</button></div><p role="status" aria-live="polite" data-share-status></p>
+<p>Кнопки открывают выбор получателя. Сообщения отправляешь ты.</p></section>
+<section id="screens"><h2>Как выглядит приложение</h2>
+<figure class="guide-shot"><a href="../assets/screens/panel-v12.webp" download><img src="../assets/screens/panel-v12.webp" width="1280" height="720" alt="Панель xlamBOT серии 1.2: функции и переключатели" loading="lazy"></a><figcaption>Главная панель поверх игры: функции, запуск и остановка. Нажми, чтобы сохранить исходный скриншот.</figcaption></figure>
+<figure class="guide-shot"><a href="../assets/screens/brawlers-v12.webp" download><img src="../assets/screens/brawlers-v12.webp" width="1280" height="720" alt="Каталог бойцов xlamBOT с плитками персонажей" loading="lazy"></a><figcaption>Выбор бойца. Очередь умеет менять персонажа после матчей или чистого прироста +N кубков.</figcaption></figure>
+<figure class="guide-shot"><a href="../assets/screens/plus-v12.webp" download><img src="../assets/screens/plus-v12.webp" width="1280" height="720" alt="Экран подключения дополнительных функций xlamBOT Plus" loading="lazy"></a><figcaption>Plus оформляется в Telegram-боте: 50 Stars за 30 дней, продление вручную.</figcaption></figure></section>
+<section id="description"><h2>Коротко о xlamBOT</h2><blockquote><p>xlamBOT — бот для Brawl Stars на Android. Распознаёт экран, двигается, атакует и использует способности. Три стиля, очередь бойцов, обычный Autododge и статистика доступны в Free. Скачать APK можно бесплатно с официального сайта.</p></blockquote>
+<p>Plus добавляет усиленный Autododge, AutoAim с упреждением, режим кустов, ящики и кубы усиления, ускоренную реакцию и доступные на устройстве GPU / NNAPI. <a href="../features/">Точное сравнение Free и Plus →</a></p>
+<p>Не обещай гарантированные победы, конкретный прирост кубков, отсутствие риска для игрового аккаунта или совместимость со всеми телефонами. Работа в фоне и при заблокированном экране не поддерживается.</p></section>
+<section id="links"><h2>Официальные ссылки</h2><ul><li><a href="../">Сайт и скачивание APK</a></li><li><a href="../guide-start/">Установка и первый матч</a></li><li><a href="https://t.me/xlamModz">Канал @xlamModz</a></li><li><a href="https://t.me/xlambottt_bot?start=plus">Plus и «Приведи друга»</a> — каждые пять новых подтверждённых друзей дают пригласившему 10 дней Plus.</li><li><a href="https://github.com/Olegu621/xlamBOT-Android--Brawl-Stars--">GitHub: APK, история обновлений и отчёты устройств</a></li></ul></section>
+<section id="usage"><h2>Для авторов обзоров</h2><p>Можно использовать наши скриншоты интерфейса и демонстрационную запись для обзора xlamBOT с указанием названия и официальной ссылки. Сохраняй смысл записи: не выдавай монтаж за непрерывный тест и не добавляй обещания результата. Названия, персонажи и игровые изображения Brawl Stars принадлежат их правообладателям; проект не связан с Supercell.</p><p>Лучший обзор — собственная проверка: покажи модель телефона, версию Android, запуск, движение, атаку и переход к следующему матчу. Если обнаружилась проблема, приложи шаги и короткое видео в <a href="../help/">отчёт</a>.</p></section>
+<script src="../share.js" defer></script>'''
+    }}

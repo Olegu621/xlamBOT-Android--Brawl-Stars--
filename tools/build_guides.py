@@ -5,6 +5,7 @@ from html import escape
 import json,re
 from manual_content import pages as manual_pages, chapter_nav
 from discovery_content import pages as discovery_pages
+from media_content import pages as media_pages
 
 ROOT = Path(__file__).resolve().parent.parent
 DOCS = ROOT / 'docs'
@@ -92,14 +93,17 @@ PAGES.update({
 
 PAGES.update(manual_pages())
 PAGES.update(discovery_pages())
+PAGES.update(media_pages())
 PAGES['updates']['body'] = '<section id="v122" class="guide-card"><p>25.10.2026</p><h2>1.2.2 — Винс и выбор бойцов со скинами</h2><p>Добавлен Винс: портрет, профиль атаки и Супера, выбор и очередь. В поиске панели доступны русские и английские имена. Старые настройки и собственные параметры бойцов сохраняются. После открытия выбранной карточки бот нажимает SELECT без проверки названия скина.</p><p>Бой за Винса на аккаунте разработчика не проверялся: боец не разблокирован. Отдельное распознавание гусениц и мотыльков не заявлено. <a href="../brawlers/#vince">Подробности профиля →</a></p></section>' + PAGES['updates']['body']
 PAGES['updates']['body'] = '<section id="v123" class="guide-card"><p>25.10.2026</p><h2>1.2.3 — исправления остановок в бою</h2><p>Исправлен случай, когда живой боец останавливался между стеной и газом, хотя вдоль стены был безопасный проход. Проверки стен, воды и газа сохранены.</p><p>Во время возрождения определение джойстика остаётся на паузе; после появления персонажа управление определяется по новому кадру. В журнал добавлены причины ожидания движения.</p><p>Сохранены Винс и SELECT без проверки названия скина. Исправление не означает устранение всех возможных причин остановки на любом устройстве.</p></section>' + PAGES['updates']['body']
+PAGES['updates']['body'] = '<section id="v125" class="guide-card"><p>26.10.2026</p><h2>1.2.5 — быстрее распознавание, надёжнее движение</h2><ul><li>Лобби определяется до длительного перебора надписей боя. Окна RELOAD и RETRY LOGIN больше не требуют двух одинаковых проходов распознавания текста.</li><li>Выход из застревания учитывает выданную команду джойстика и смещение персонажа относительно карты. Сохранены проверки газа, стен и воды, паузы при возрождении и намеренном ожидании.</li><li>Кнопки способностей проверяются по свежим пикселям в уже найденном месте; полный поиск повторяется при необходимости.</li><li>Восстановление изображения продолжается с паузами между попытками. Временная ошибка снимка больше не останавливает сессию после трёх попыток; отозванное системное разрешение нужно включить снова.</li><li>Дальнобойные бойцы лучше сохраняют дистанцию, метатели меняют позицию за укрытием. В поддержке убраны дубликаты одинаковых обращений.</li></ul><p>Free включает исправления и восстановление движения. Функции Plus и правила оплаты сохранены. Устанавливай APK поверх предыдущего, затем выключи и включи службу xlamBOT и подключи изображение заново.</p><p>Проверки на эмуляторе не подтверждают совместимость с каждым телефоном. О проблеме сообщай с моделью, Android и версией приложения: <a href="../help/">шаблон отчёта</a>.</p></section>' + PAGES['updates']['body']
 PAGES['guide-panel']['body'] = '<figure class="guide-shot"><img src="../assets/screens/panel-v12.webp" width="1280" height="720" alt="Панель xlamBOT серии 1.2: функции, очередь, статистика и Plus" loading="lazy"><figcaption>Реальный экран новой панели серии 1.2. Ниже — назначение вкладок и кнопок.</figcaption></figure>' + PAGES['guide-panel']['body']
 PAGES['guide-queue']['body'] = '<figure class="guide-shot"><img src="../assets/screens/brawlers-v12.webp" width="1280" height="720" alt="Плитки бойцов в меню xlamBOT: поиск и выбор персонажа" loading="lazy"><figcaption>Выбор бойца в новой панели. <a href="../brawlers/">Полный каталог и Винс →</a></figcaption></figure>' + PAGES['guide-queue']['body']
 PAGES['guide-plus']['body'] = '<figure class="guide-shot"><img src="../assets/screens/plus-v12.webp" width="1280" height="720" alt="Экран Plus в новой панели xlamBOT: функции и подключение через Telegram" loading="lazy"><figcaption>Экран Plus серии 1.2. Привязка и покупка выполняются через Telegram; ниже описаны срок, продление и рефералка.</figcaption></figure>' + PAGES['guide-plus']['body']
 
 for _page in PAGES.values():
- _page["modified"]="2026-10-25"
+ _page.setdefault("modified","2026-10-25")
+PAGES['updates']['modified']='2026-10-26'
 
 def video_schema():
  return {'@type':'VideoObject','@id':BASE+'watch/#video','name':'Как играет xlamBOT в Brawl Stars','description':'Реальная запись игры с панелью xlamBOT на Android. Показаны игровой процесс, движение и атаки. Результат одного боя не гарантирует результат следующих матчей.','thumbnailUrl':[BASE+'assets/video-cover.webp'],'contentUrl':BASE+'assets/gameplay.mp4','uploadDate':'2026-10-17T10:52:25+03:00','duration':'PT17.4S','inLanguage':'ru','isFamilyFriendly':True}
@@ -113,7 +117,7 @@ def build():
  version=re.search(r'data-version>([0-9.]+)',home_text).group(1)
  graph={'@context':'https://schema.org','@graph':[
   {'@type':'WebSite','@id':BASE+'#website','url':BASE,'name':'xlamBOT','alternateName':'xlamBOT Android','inLanguage':['ru','en']},
-  {'@type':'WebPage','@id':BASE+'#page','url':BASE,'name':'xlamBOT — бот для Brawl Stars на Android','inLanguage':'ru','dateModified':'2026-10-25','isPartOf':{'@id':BASE+'#website'},'mainEntity':{'@id':BASE+'#app'}},
+  {'@type':'WebPage','@id':BASE+'#page','url':BASE,'name':'xlamBOT — бот для Brawl Stars на Android','inLanguage':'ru','dateModified':'2026-10-26','isPartOf':{'@id':BASE+'#website'},'mainEntity':{'@id':BASE+'#app'}},
   {'@type':'MobileApplication','@id':BASE+'#app','name':'xlamBOT','applicationCategory':'GameApplication','operatingSystem':'Android 8.0 or later','softwareVersion':version,'url':BASE,'downloadUrl':APK,'image':BASE+'assets/social.jpg','screenshot':BASE+'assets/gameplay.webp','releaseNotes':BASE+'updates/','softwareHelp':{'@type':'CreativeWork','url':BASE+'help/'},'creator':{'@type':'Person','name':'Olegu621','url':'https://github.com/Olegu621'},'description':'Бот для Brawl Stars на Android: распознавание экрана, движение, атаки, три стиля и очередь бойцов. Free бесплатен, дополнительные возможности доступны в Plus.','isAccessibleForFree':True,'featureList':['Screen recognition and touch controls','Three play styles','Brawler queues and match statistics','Optional Plus'],'offers':{'@type':'Offer','price':'0','priceCurrency':'USD','description':'Free APK; optional Plus is sold separately in Telegram.'},'sameAs':[REPO,'https://t.me/xlamModz']}
  ]}
  home_text=re.sub(r'<script type="application/ld\+json">.*?</script>',lambda match:'<script type="application/ld+json">'+json.dumps(graph,ensure_ascii=False)+'</script>',home_text,flags=re.S)

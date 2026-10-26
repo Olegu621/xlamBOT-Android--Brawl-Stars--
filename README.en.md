@@ -8,19 +8,15 @@
 
 **[▶ Watch 17 seconds of actual gameplay](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/watch/)** — a recorded example, not a guaranteed result. No root or permanently connected PC is required. Keep Brawl Stars visible.
 
-## Current release: 1.2.3
+## Current release: 1.2.5
 
-Fixes a live-player movement stall in a corridor between gas and a wall with a safe passage. Control calibration remains suspended during respawn and resumes with live-player evidence. Local logs explain movement waits.
+Faster lobby and reconnect-dialog recognition, recovery based on player movement relative to the scene, and fresh-pixel ability-button checks. Gas, wall and water guards remain active. Capture retries continue after temporary failures. These changes include the unpublished 1.2.4 improvements.
 
-Retained from 1.2.2:
+[Release notes](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/updates/#v125) · [Real gameplay, screenshots and creator materials](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/media/).
 
-**Vince** joins the 108-profile catalogue, app picker and queues with a portrait, ranged attack/Super profile and English/Russian name matching. Vince is not unlocked on the developer's account, so a live Vince match has not been verified. Dedicated caterpillar/moth detection is not included. [Brawler catalogue (RU)](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/brawlers/).
+[▶ Version 1.2.5 playing a real match — a vertical clip without music](docs/assets/promo-125.mp4).
 
-After opening the chosen brawler card, SELECT no longer waits for a matching skin title.
-
-The redesigned 1.2 interface and Free net-trophy rotation are retained, along with 1.2.1 launcher recovery, pause in other apps and pause-aware online counts. [Release history (RU)](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/updates/).
-
-[![Actual native xlamBOT 1.2 interface](docs/assets/screens/panel-v12.webp)](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/guide-panel/)
+The Free APK includes basic gameplay, three styles, queues and these fixes. Optional Plus is sold separately in Telegram. Native emulator checks do not establish compatibility with every phone.
 
 ## Quick start
 
