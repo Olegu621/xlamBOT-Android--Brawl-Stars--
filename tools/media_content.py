@@ -9,7 +9,7 @@ def pages():
         'heading':'xlamBOT: покажи, как он играет', 'label':'Видео и материалы',
         'lead':'Для друга, обзора или своего канала. Здесь — настоящая запись игры, экраны приложения и короткое описание без выдуманных результатов.',
         'modified':'2026-10-26',
-        'body':'''<section class="guide-card"><h2>Новая 1.2.5 — в настоящем матче</h2>
+        'body':'''<section class="guide-card"><h2>Реальный матч — запись на 1.2.5</h2>
 <video controls playsinline preload="none" poster="../assets/promo-125.jpg" width="1080" height="1920" style="width:100%;max-width:360px;height:auto;display:block;margin:auto;border-radius:16px"><source src="../assets/promo-125.mp4" type="video/mp4">Твой браузер не поддерживает видео. <a href="../assets/promo-125.mp4">Открыть MP4</a></video>
 <p>22 секунды непрерывной записи с работающим xlamBOT 1.2.5: движение, атаки и панель бота. Скорость игры сохранена, музыки нет. Вертикальный ролик подходит для короткой публикации; отдельный бой не гарантирует результат следующих матчей.</p><div class="guide-actions"><a class="button button-lime" href="../assets/promo-125.mp4" download="xlamBOT-1.2.5-vertical.mp4">Скачать вертикальный ролик ↓</a><a class="button button-outline" href="#share">Показать другу →</a></div></section>
 <section class="guide-card"><h2>Ещё одна запись игры</h2>

@@ -4,7 +4,7 @@ from html import escape
 import re
 
 UPDATED = '2026-10-25'
-VERSION = '1.2.5'
+VERSION = '1.2.6'
 
 # Each chapter keeps stable section anchors for support links and search results.
 CHAPTERS = [{'slug': 'guide-start',
@@ -283,7 +283,7 @@ CHAPTERS = [{'slug': 'guide-start',
                 'телефоне несколько одинаковых игровых ситуаций.</p>'),
                ('acceleration',
                 'GPU, NNAPI и автоматический запасной режим',
-                '<p>CPU используется как базовый вариант. В Plus можно выбрать прямой GPU либо аппаратное ускорение через NNAPI. Доступ к NPU и выбор '
+                '<p>В 1.2.6 бот начинает на CPU. Необязательное ускорение проверяется отдельно после начала боя: если подготовка не закончилась за 10 секунд, CPU продолжает работу. Стоп не ждёт драйвер, а поздний результат подготовки не включается.</p><p>CPU используется как базовый вариант. В Plus можно выбрать прямой GPU либо аппаратное ускорение через NNAPI. Доступ к NPU и выбор '
                 'исполнителя NNAPI определяет драйвер телефона: наличие пункта не означает, что на любом устройстве задействован отдельный NPU.</p><p>При '
                 'повторных сбоях ускорения бот может перейти на более стабильный CPU и записать причину в журнал. Ускоряется распознавание бота; это не '
                 'обещание роста FPS игры. Если после включения начались вылеты, выключи ускорение и сохрани модель телефона, версию Android и время '
@@ -447,7 +447,7 @@ CHAPTERS = [{'slug': 'guide-start',
                 'Короткое видео с переходом лобби → выбор → SELECT полезнее одного скриншота меню.</p>')]},
  {'slug': 'guide-data',
   'label': 'Журнал, отчёты и данные',
-  'description': 'Какие данные хранит и отправляет xlamBOT: локальная история, необязательные отчёты об ошибках, онлайн сообщества и подробный шаблон обратной '
+  'description': 'Какие данные хранит и отправляет xlamBOT: локальная история, автоматические обезличенные отчёты, онлайн сообщества и подробный шаблон обратной '
                  'связи.',
   'lead': 'Отчёт должен помогать повторить проблему. Отзыв «всё работает» тоже полезен, если в нём есть модель, версия Android и условия проверки.',
   'sections': [('local',
@@ -551,8 +551,8 @@ CHAPTERS = [{'slug': 'guide-start',
                ('version',
                 'Версия руководства и актуальность',
                 f'<p>Текущая версия — <strong>{VERSION}</strong>. Инструкции описывают меню линейки 1.2, Autododge Free/Plus, бесплатную смену по +N '
-                'и рефералку без пробного периода. Раздел обновления дополнен 26.10.2026. Старые статьи и записи игры могут показывать предыдущий '
-                'внешний вид.</p><p><a href="../updates/#v125">Изменения 1.2.5: распознавание, восстановление изображения и движения →</a>. '
+                'и рефералку без пробного периода. Раздел обновления дополнен 27.10.2026. Старые статьи и записи игры могут показывать предыдущий '
+                'внешний вид.</p><p><a href="../updates/#v126">Изменения 1.2.6: запуск CPU и отдельная проверка ускорения →</a>. '
                 'Если в твоём APK другие названия, сначала проверь номер версии.</p>')]}]
 
 
@@ -576,7 +576,7 @@ def pages():
         for anchor,title,body in chapter['sections']:
             plain=escape(re.sub('<[^>]+>',' ',body))
             search.append(f'<li data-manual-entry><a href="../{chapter["slug"]}/#{anchor}"><small>{escape(chapter["label"])}</small><strong>{escape(title)}</strong></a><span class="manual-search-text" hidden>{plain}</span></li>')
-    hub=f'''<div class="manual-meta"><span>Версия приложения {VERSION}</span><span>10 глав · пошаговые инструкции</span><span>Обновлено 26.10.2026</span></div>
+    hub=f'''<div class="manual-meta"><span>Версия приложения {VERSION}</span><span>10 глав · пошаговые инструкции</span><span>Обновлено 27.10.2026</span></div>
 <div class="manual-search" data-manual-search hidden><label for="manual-query">Найти настройку или проблему</label><div class="manual-search-row"><input id="manual-query" type="search" placeholder="Например: unknown, очередь, Plus" autocomplete="off" aria-controls="manual-results" aria-describedby="manual-search-hint"><button type="button" data-clear-search>Очистить</button></div><p id="manual-search-hint">Поиск по всем главам. Введи несколько слов: «нет кадра» или «смена бойца».</p><p id="manual-search-status" role="status" aria-live="polite"></p><ul id="manual-results" hidden>'''+''.join(search)+'''</ul></div>
 <noscript><p class="guide-tip">Все главы доступны ниже без JavaScript. Для поиска по странице используй поиск браузера.</p></noscript>
 <section id="routes"><h2>С чего начать</h2><div class="manual-routes"><a href="../guide-start/#first-match">Первый запуск →</a><a href="../guide-errors/#unknown">Стоит или пишет unknown →</a><a href="../guide-queue/#rotation">Нужна смена бойцов →</a><a href="../guide-plus/#activate">Подключить Plus →</a></div></section>
@@ -585,6 +585,8 @@ def pages():
     result={'guide':{'title':'Документация xlamBOT — полное руководство бота для Android','description':f'Подробная документация xlamBOT {VERSION}: установка, разрешения, захват Brawl Stars, настройки, очередь бойцов, Plus, ускорение, ошибки и отчёты.','heading':'Документация xlamBOT','label':'Документация','lead':'От первого запуска до настройки очереди и разбора ошибок. Все инструкции собраны по задачам, с поиском по полному руководству.','body':hub,'manual':True,'modified':'2026-10-26'}}
     for index,chapter in enumerate(CHAPTERS):
         result[chapter['slug']]={'title':chapter['label']+' — руководство xlamBOT','description':chapter['description'],'heading':'xlamBOT: '+chapter['label'].lower(),'label':chapter['label'],'lead':chapter['lead'],'body':chapter_body(chapter,index),'manual':True,'chapter':index,'modified':chapter.get('modified',UPDATED)}
+    for slug in ('guide','guide-settings','guide-data','guide-updates'):
+        result[slug]['modified']='2026-10-27'
     return result
 
 def chapter_nav(current):

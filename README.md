@@ -7,7 +7,7 @@
 Бесплатный Android APK: распознавание экрана, движение, атаки, три стиля игры и очередь бойцов.
 
 [![Android 8+](https://img.shields.io/badge/Android-8%2B-3ddc84?logo=android&logoColor=white)](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/compatibility/)
-[![APK 1.2.5](https://img.shields.io/badge/APK-1.2.5-c4ff52)](https://github.com/Olegu621/xlamBOT-Android--Brawl-Stars--/releases/latest/download/xlamBOT.apk)
+[![APK 1.2.6](https://img.shields.io/badge/APK-1.2.6-c4ff52)](https://github.com/Olegu621/xlamBOT-Android--Brawl-Stars--/releases/latest/download/xlamBOT.apk)
 [![Telegram](https://img.shields.io/badge/Telegram-%40xlamModz-26a5e4?logo=telegram&logoColor=white)](https://t.me/xlamModz)
 [![Website checks](https://github.com/Olegu621/xlamBOT-Android--Brawl-Stars--/actions/workflows/website.yml/badge.svg)](https://github.com/Olegu621/xlamBOT-Android--Brawl-Stars--/actions/workflows/website.yml)
 
@@ -21,13 +21,15 @@
 
 Видео показывает движение и атаки с работающей панелью. Это отдельная запись, а не обещание такого же результата в каждом матче. Игра остаётся видимой; root и постоянно подключённый ПК не нужны.
 
-## Актуальная версия: 1.2.5
+## Актуальная версия: 1.2.6
 
-Ускорено распознавание лобби и окон RELOAD / RETRY LOGIN. Выход из застревания учитывает движение персонажа относительно карты; проверки газа, стен и воды сохранены. Улучшено восстановление изображения после временного сбоя. Кнопки способностей проверяются по свежему кадру с повторным использованием найденного положения.
+Бот сначала запускает распознавание на CPU, затем отдельно проверяет необязательное ускорение GPU/NNAPI после начала игры. Если подготовка не закончилась за 10 секунд, работа продолжается на CPU. Стоп не ждёт драйвер; повторный запуск не создаёт очередь подготовок. Сохранены исправления распознавания и движения из 1.2.5.
 
-[Что изменилось](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/updates/#v125) · [Видео, скриншоты и материалы для публикаций](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/media/)
+Проверки: 290 автоматических тестов, сборка, 5 проверок защиты и прежняя подпись. Полная игровая проверка сборки 1.2.6 пока не завершена.
 
-[▶ Новая 1.2.5 в настоящем матче — вертикальный ролик без музыки](docs/assets/promo-125.mp4)
+[Что изменилось](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/updates/#v126) · [Видео, скриншоты и материалы для публикаций](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/media/)
+
+[▶ Запись настоящего матча на 1.2.5 — вертикальный ролик без музыки](docs/assets/promo-125.mp4)
 
 Сохранено из 1.2.2:
 

@@ -8,11 +8,13 @@
 
 **[▶ Watch 17 seconds of actual gameplay](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/watch/)** — a recorded example, not a guaranteed result. No root or permanently connected PC is required. Keep Brawl Stars visible.
 
-## Current release: 1.2.5
+## Current release: 1.2.6
 
-Faster lobby and reconnect-dialog recognition, recovery based on player movement relative to the scene, and fresh-pixel ability-button checks. Gas, wall and water guards remain active. Capture retries continue after temporary failures. These changes include the unpublished 1.2.4 improvements.
+Screen recognition starts on CPU. Optional GPU/NNAPI preparation runs separately after gameplay begins; preparation exceeding ten seconds keeps CPU active. Stop no longer waits for driver preparation, and repeated starts do not queue more preparations. The recognition and movement fixes from 1.2.5 are included.
 
-[Release notes](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/updates/#v125) · [Real gameplay, screenshots and creator materials](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/media/).
+Validation: 290 automated tests, build checks, five APK protection checks and the original signing certificate. Full in-game validation of 1.2.6 is not yet complete.
+
+[Release notes](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/updates/#v126) · [Real gameplay, screenshots and creator materials](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/media/).
 
 [▶ Version 1.2.5 playing a real match — a vertical clip without music](docs/assets/promo-125.mp4).
 
