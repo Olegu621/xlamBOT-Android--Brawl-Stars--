@@ -7,7 +7,7 @@
 Бесплатный Android APK: распознавание экрана, движение, атаки, три стиля игры и очередь бойцов.
 
 [![Android 8+](https://img.shields.io/badge/Android-8%2B-3ddc84?logo=android&logoColor=white)](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/compatibility/)
-[![APK 1.2.6](https://img.shields.io/badge/APK-1.2.6-c4ff52)](https://github.com/Olegu621/xlamBOT-Android--Brawl-Stars--/releases/latest/download/xlamBOT.apk)
+[![APK 1.4.9](https://img.shields.io/badge/APK-1.4.9-c4ff52)](https://github.com/Olegu621/xlamBOT-Android--Brawl-Stars--/releases/latest/download/xlamBOT.apk)
 [![Telegram](https://img.shields.io/badge/Telegram-%40xlamModz-26a5e4?logo=telegram&logoColor=white)](https://t.me/xlamModz)
 [![Website checks](https://github.com/Olegu621/xlamBOT-Android--Brawl-Stars--/actions/workflows/website.yml/badge.svg)](https://github.com/Olegu621/xlamBOT-Android--Brawl-Stars--/actions/workflows/website.yml)
 
@@ -21,15 +21,17 @@
 
 Видео показывает движение и атаки с работающей панелью. Это отдельная запись, а не обещание такого же результата в каждом матче. Игра остаётся видимой; root и постоянно подключённый ПК не нужны.
 
-## Актуальная версия: 1.2.6
+## Актуальная версия: 1.4.9
 
-Бот сначала запускает распознавание на CPU, затем отдельно проверяет необязательное ускорение GPU/NNAPI после начала игры. Если подготовка не закончилась за 10 секунд, работа продолжается на CPU. Стоп не ждёт драйвер; повторный запуск не создаёт очередь подготовок. Сохранены исправления распознавания и движения из 1.2.5.
+После 1.4.4 исправлены удержание и отпускание джойстика, повторное ожидание управления и восстановление после подтверждённой остановки. Улучшено распознавание боевого интерфейса на уменьшенном изображении и обработка RELOAD / TRY AGAIN.
 
-Проверки: 290 автоматических тестов, сборка, 5 проверок защиты и прежняя подпись. Полная игровая проверка сборки 1.2.6 пока не завершена.
+С включённым **BrawlerRules (Plus)** Шелли настойчивее сближается для ближнего урона и Супера. Проверки газа, стен, воды и защиты команды сохранены. При выключении используется обычная тактика. Режим ожидания в кустах удалён.
 
-[Что изменилось](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/updates/#v126) · [Видео, скриншоты и материалы для публикаций](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/media/)
+320 автоматических тестов, lint, релизная сборка и 5 проверок защиты прошли. Сборка установлена и проверялась в игре на BlueStacks Rvc64. Последнее конкретное нажатие RELOAD новым обработчиком отдельно не зафиксировано; совместимость со всеми телефонами не заявляется.
 
-[▶ Запись настоящего матча на 1.2.5 — вертикальный ролик без музыки](docs/assets/promo-125.mp4)
+[**Скачать защищённый APK 1.4.9**](https://github.com/Olegu621/xlamBOT-Android--Brawl-Stars--/releases/download/v1.4.9/xlamBOT.apk) · [Изменения после 1.4.4](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/updates/#v149)
+
+[![Текущий раздел поведения xlamBOT](docs/assets/screens/behavior-v149.webp)](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/updates/#v149)
 
 Сохранено из 1.2.2:
 
@@ -59,7 +61,7 @@
 | Обычный Autododge и уход от газа | ✓ | ✓ |
 | Очередь, смена после матчей или чистого прироста +N кубков, статистика | ✓ | ✓ |
 | Усиленный Autododge и AutoAim с упреждением | — | ✓ |
-| Сидеть в кустах, атаковать ящики и собирать кубы усиления | — | ✓ |
+| BrawlerRules, атаковать ящики и собирать кубы усиления | — | ✓ |
 | Быстрая реакция, GPU / NNAPI на поддерживаемых устройствах | — | ✓ |
 | Редкие пины в спокойные моменты | — | ✓ |
 

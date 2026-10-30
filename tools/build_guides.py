@@ -108,6 +108,9 @@ for _page in PAGES.values():
 for _slug in ('updates','en','features','media'):
  PAGES[_slug]['modified']='2026-10-27'
 
+from release_content import apply as apply_release
+apply_release(PAGES)
+
 def video_schema():
  return {'@type':'VideoObject','@id':BASE+'watch/#video','name':'Как играет xlamBOT в Brawl Stars','description':'Реальная запись игры с панелью xlamBOT на Android. Показаны игровой процесс, движение и атаки. Результат одного боя не гарантирует результат следующих матчей.','thumbnailUrl':[BASE+'assets/video-cover.webp'],'contentUrl':BASE+'assets/gameplay.mp4','uploadDate':'2026-10-17T10:52:25+03:00','duration':'PT17.4S','inLanguage':'ru','isFamilyFriendly':True}
 
@@ -166,7 +169,7 @@ def build():
   (directory/'index.html').write_text(html,encoding='utf-8')
  sitemap='<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">\n'
  for slug in ['',*PAGES]:
-  modified=PAGES[slug].get('modified','2026-10-25') if slug else '2026-10-27'
+  modified=PAGES[slug].get('modified','2026-10-25') if slug else '2026-10-30'
   sitemap+=f'  <url><loc>{BASE}{slug+"/" if slug else ""}</loc><lastmod>{modified}</lastmod>'
   if slug=='watch':
    video=video_schema()

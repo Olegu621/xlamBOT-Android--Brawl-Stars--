@@ -8,13 +8,13 @@
 
 **[▶ Watch 17 seconds of actual gameplay](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/watch/)** — a recorded example, not a guaranteed result. No root or permanently connected PC is required. Keep Brawl Stars visible.
 
-## Current release: 1.2.6
+## Current release: 1.4.9
 
-Screen recognition starts on CPU. Optional GPU/NNAPI preparation runs separately after gameplay begins; preparation exceeding ten seconds keeps CPU active. Stop no longer waits for driver preparation, and repeated starts do not queue more preparations. The recognition and movement fixes from 1.2.5 are included.
+Updated joystick release/restart handling, reduced control reacquisition delays, small-scale battle HUD recognition and guarded RELOAD / TRY AGAIN recovery. Optional Plus BrawlerRules makes Shelly commit to close-range attacks while preserving gas, wall, water and team safety checks. The bush-waiting mode has been removed.
 
-Validation: 290 automated tests, build checks, five APK protection checks and the original signing certificate. Full in-game validation of 1.2.6 is not yet complete.
+Validation: 320 unit tests, lint, release assembly and five protection checks passed. Installed and observed in gameplay on BlueStacks Rvc64. The latest specific RELOAD tap path has not yet been separately confirmed in a live recurrence.
 
-[Release notes](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/updates/#v126) · [Real gameplay, screenshots and creator materials](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/media/).
+[Download protected APK 1.4.9](https://github.com/Olegu621/xlamBOT-Android--Brawl-Stars--/releases/download/v1.4.9/xlamBOT.apk) · [Release notes](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/updates/#v149).
 
 [▶ Version 1.2.5 playing a real match — a vertical clip without music](docs/assets/promo-125.mp4).
 
@@ -38,7 +38,7 @@ After updating, switch the Accessibility service off/on and reconnect the image 
 | Normal Autododge, gas avoidance, queues and statistics | Yes | Yes |
 | Switch after matches or a net +N trophy gain | Yes | Yes |
 | Enhanced Autododge and optional predictive AutoAim | — | Yes |
-| Bush tactics, attacking boxes and collecting power cubes | — | Yes |
+| BrawlerRules, attacking boxes and collecting power cubes | — | Yes |
 | Faster reaction, optional GPU / NNAPI on supported devices | — | Yes |
 | Occasional pins in quiet moments | — | Yes |
 
