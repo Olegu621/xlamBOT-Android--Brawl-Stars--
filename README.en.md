@@ -8,13 +8,15 @@
 
 **[▶ Watch 17 seconds of actual gameplay](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/watch/)** — a recorded example, not a guaranteed result. No root or permanently connected PC is required. Keep Brawl Stars visible.
 
-## Current release: 1.4.9
+## Current release: 1.4.10
 
-Updated joystick release/restart handling, reduced control reacquisition delays, small-scale battle HUD recognition and guarded RELOAD / TRY AGAIN recovery. Optional Plus BrawlerRules makes Shelly commit to close-range attacks while preserving gas, wall, water and team safety checks. The bush-waiting mode has been removed.
+Optional Plus BrawlerRules now supports Gus in Trio Showdown: ranged spacing, retreat after shots, visible-target locking, conservative finishing, self-shields and safe objectives. Readable HUD meters inform health and ammo decisions; uncertain values remain unknown. Existing gadget behavior is preserved.
 
-Validation: 320 unit tests, lint, release assembly and five protection checks passed. Installed and observed in gameplay on BlueStacks Rvc64. The latest specific RELOAD tap path has not yet been separately confirmed in a live recurrence.
+Select Gus in both game and bot, then enable BrawlerRules in Behavior. Turning it off restores the original tactics. Shelly rules and previous joystick fixes remain.
 
-[Download protected APK 1.4.9](https://github.com/Olegu621/xlamBOT-Android--Brawl-Stars--/releases/download/v1.4.9/xlamBOT.apk) · [Release notes](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/updates/#v149).
+352 automated tests, lint, release assembly and five APK protection checks passed. Live emulator checks covered movement, retreat, ammo readings and transitions. Every tactical case and physical device was not individually demonstrated.
+
+[Download protected APK 1.4.10](https://github.com/Olegu621/xlamBOT-Android--Brawl-Stars--/releases/download/v1.4.10/xlamBOT.apk) · [Release notes](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/updates/#v1410).
 
 [▶ Version 1.2.5 playing a real match — a vertical clip without music](docs/assets/promo-125.mp4).
 

@@ -7,7 +7,7 @@
 Бесплатный Android APK: распознавание экрана, движение, атаки, три стиля игры и очередь бойцов.
 
 [![Android 8+](https://img.shields.io/badge/Android-8%2B-3ddc84?logo=android&logoColor=white)](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/compatibility/)
-[![APK 1.4.9](https://img.shields.io/badge/APK-1.4.9-c4ff52)](https://github.com/Olegu621/xlamBOT-Android--Brawl-Stars--/releases/latest/download/xlamBOT.apk)
+[![APK 1.4.10](https://img.shields.io/badge/APK-1.4.10-c4ff52)](https://github.com/Olegu621/xlamBOT-Android--Brawl-Stars--/releases/latest/download/xlamBOT.apk)
 [![Telegram](https://img.shields.io/badge/Telegram-%40xlamModz-26a5e4?logo=telegram&logoColor=white)](https://t.me/xlamModz)
 [![Website checks](https://github.com/Olegu621/xlamBOT-Android--Brawl-Stars--/actions/workflows/website.yml/badge.svg)](https://github.com/Olegu621/xlamBOT-Android--Brawl-Stars--/actions/workflows/website.yml)
 
@@ -21,17 +21,15 @@
 
 Видео показывает движение и атаки с работающей панелью. Это отдельная запись, а не обещание такого же результата в каждом матче. Игра остаётся видимой; root и постоянно подключённый ПК не нужны.
 
-## Актуальная версия: 1.4.9
+## Актуальная версия: 1.4.10
 
-После 1.4.4 исправлены удержание и отпускание джойстика, повторное ожидание управления и восстановление после подтверждённой остановки. Улучшено распознавание боевого интерфейса на уменьшенном изображении и обработка RELOAD / TRY AGAIN.
+**BrawlerRules для Гаса (Plus):** дистанция и стрельба на отходе, сохранение видимой цели, безопасное сближение с ослабленным противником, щит себе и помощь команде с ящиками и кубами. При читаемом HUD бот учитывает здоровье и патроны; неясные показания остаются неизвестными. Гаджет работает как раньше.
 
-С включённым **BrawlerRules (Plus)** Шелли настойчивее сближается для ближнего урона и Супера. Проверки газа, стен, воды и защиты команды сохранены. При выключении используется обычная тактика. Режим ожидания в кустах удалён.
+Выбери Гаса в игре и боте, открой **«Поведение» → BrawlerRules**. При выключении используется прежняя тактика. Правила Шелли и исправления джойстика из 1.4.9 сохранены.
 
-320 автоматических тестов, lint, релизная сборка и 5 проверок защиты прошли. Сборка установлена и проверялась в игре на BlueStacks Rvc64. Последнее конкретное нажатие RELOAD новым обработчиком отдельно не зафиксировано; совместимость со всеми телефонами не заявляется.
+352 автоматических теста, lint, сборка и 5 проверок защиты прошли. На BlueStacks проверены движение, отходы, патроны и переходы между боями. Все отдельные тактические ситуации и все модели телефонов живой проверкой не охвачены.
 
-[**Скачать защищённый APK 1.4.9**](https://github.com/Olegu621/xlamBOT-Android--Brawl-Stars--/releases/download/v1.4.9/xlamBOT.apk) · [Изменения после 1.4.4](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/updates/#v149)
-
-[![Текущий раздел поведения xlamBOT](docs/assets/screens/behavior-v149.webp)](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/updates/#v149)
+[**Скачать защищённый APK 1.4.10**](https://github.com/Olegu621/xlamBOT-Android--Brawl-Stars--/releases/download/v1.4.10/xlamBOT.apk) · [Что нового](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/updates/#v1410)
 
 Сохранено из 1.2.2:
 

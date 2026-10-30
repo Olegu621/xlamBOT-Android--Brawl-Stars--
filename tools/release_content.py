@@ -1,6 +1,7 @@
+# -*- coding: utf-8 -*-
 """Public release facts and screenshots; never imports Android sources or logs."""
 
-VERSION = '1.4.9'
+VERSION = '1.4.10'
 DATE = '2026-10-30'
 
 def apply(pages):
@@ -10,6 +11,11 @@ def apply(pages):
     pages['features']['body'] = '<section class="guide-card"><h2>Актуально для 1.4.9</h2><p>Исправления движения и распознавания доступны всем. BrawlerRules с дополнительной тактикой Шелли включается отдельно при активном Plus. Режим ожидания в кустах удалён. <a href="../updates/#v149">Все изменения после 1.4.4 →</a></p></section>' + pages['features']['body']
     pages['guide-panel']['body'] = '<figure class="guide-shot"><img src="../assets/screens/panel-v149.webp" width="1099" height="633" alt="Главная панель xlamBOT 1.4.9" loading="lazy"><figcaption>Текущая панель: боец, стиль, быстрые функции и запуск.</figcaption></figure>' + pages['guide-panel']['body']
     pages['en']['body'] = '<section id="v149" class="guide-card"><h2>xlamBOT 1.4.9</h2><p>Updated joystick release and restart handling, close-range Shelly behavior with optional Plus BrawlerRules, small-scale battle HUD recognition, and guarded RELOAD / TRY AGAIN recovery. The bush-waiting mode has been removed. 320 automated tests and five protection checks passed; gameplay was observed on BlueStacks. The latest specific RELOAD tap path has not yet been separately confirmed in a live recurrence.</p><p><a href="../updates/#v149">Release details →</a></p></section>' + pages['en']['body']
+    gus = '<section id="v1410" class="guide-card"><p>30.10.2026 · Android 1.4.10</p><h2>BrawlerRules для Гаса</h2><p>Выбери Гаса в игре и боте, затем включи «Поведение → BrawlerRules» с активным Plus. При выключении остаётся прежняя тактика.</p><ul><li>Дистанция и стрельба на отходе; при преследовании продолжает отступать. Сохраняет выбранную видимую цель.</li><li>Безопасное сближение с ослабленной одиночной целью при поддержке команды. Без видимой поддержки действует осторожнее.</li><li>Бережёт последний патрон и отходит для восстановления здоровья, когда полосы HUD читаются уверенно. Нечёткие показания не считаются нулём.</li><li>Щит — себе; поведение гаджета сохранено.</li><li>Помогает разбивать безопасные ящики издалека, уступает куб союзнику, но забирает сам, если тот не подходит. Опасность отменяет сбор.</li><li>Проверки газа, стен, воды и свежести кадра сохранены; короткий пропуск персонажа не сбрасывает отход.</li></ul><p><a href="https://github.com/Olegu621/xlamBOT-Android--Brawl-Stars--/releases/download/v1.4.10/xlamBOT.apk">Скачать защищённую 1.4.10 →</a></p><p>352 теста и 5 проверок защиты прошли. На BlueStacks наблюдались движение, отходы, чтение патронов и переход между боями. Не каждая тактическая ситуация отдельно подтверждена живой проверкой; результат матча и совместимость с каждым телефоном не гарантируются.</p></section>'
+    pages['updates']['body'] = gus + pages['updates']['body']
+    for slug in ('features','guide-gameplay','guide-plus'):
+        pages[slug]['body'] = '<section class="guide-card"><h2>Гас в BrawlerRules · 1.4.10</h2><p>Дистанция, стрельба на отходе, щит себе и безопасные ящики и кубы. Дополнительные правила Шелли и Гаса включаются через BrawlerRules при активном Plus; при выключении используется обычная тактика. <a href="../updates/#v1410">Подробности обновления →</a></p></section>' + pages[slug]['body']
+    pages['en']['body'] = '<section id="v1410" class="guide-card"><h2>xlamBOT 1.4.10 — Gus BrawlerRules</h2><p>Optional Plus tactics for Gus: keep range, retreat after shots, lock visible targets, use self-shields and collect safe objectives. Readable HUD health and ammo guide conservative decisions; uncertain values remain unknown. 352 automated tests and five protection checks passed; live emulator observation covered movement, retreat, ammo and transitions. <a href="../updates/#v1410">Release details →</a></p></section>' + pages['en']['body']
     for slug in ('updates', 'features', 'guide-panel', 'guide-gameplay', 'guide-plus', 'en'):
         pages[slug]['modified'] = DATE
 
