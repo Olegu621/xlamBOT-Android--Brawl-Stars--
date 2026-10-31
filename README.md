@@ -7,7 +7,7 @@
 Бесплатный Android APK: распознавание экрана, движение, атаки, три стиля игры и очередь бойцов.
 
 [![Android 8+](https://img.shields.io/badge/Android-8%2B-3ddc84?logo=android&logoColor=white)](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/compatibility/)
-[![APK 1.4.17](https://img.shields.io/badge/APK-1.4.17-c4ff52)](https://github.com/Olegu621/xlamBOT-Android--Brawl-Stars--/releases/latest/download/xlamBOT.apk)
+[![APK 1.4.18](https://img.shields.io/badge/APK-1.4.18-c4ff52)](https://github.com/Olegu621/xlamBOT-Android--Brawl-Stars--/releases/latest/download/xlamBOT.apk)
 [![Telegram](https://img.shields.io/badge/Telegram-%40xlamModz-26a5e4?logo=telegram&logoColor=white)](https://t.me/xlamModz)
 [![Website checks](https://github.com/Olegu621/xlamBOT-Android--Brawl-Stars--/actions/workflows/website.yml/badge.svg)](https://github.com/Olegu621/xlamBOT-Android--Brawl-Stars--/actions/workflows/website.yml)
 
@@ -21,11 +21,13 @@
 
 Видео показывает движение и атаки с работающей панелью. Это отдельная запись, а не обещание такого же результата в каждом матче. Игра остаётся видимой; root и постоянно подключённый ПК не нужны.
 
-## Актуальная версия: 1.4.17
+## Актуальная версия: 1.4.18
 
-Автоманс и AutoAim доступны бесплатно и включаются отдельно в разделе «Поведение». Исправлены сохранение невидимой цели, сохранение патронов Гаса и решения Шелли против группы в финале. BrawlerRules остаётся в Plus.
+Убрано системное размытие игры от плавающей панели. Стеклянное оформление панели сохранено. Сборка проверена на эмуляторе Android 11; на устройствах с исходной жалобой исправление ещё нужно подтвердить.
 
-[Скачать защищённый APK 1.4.17](https://github.com/Olegu621/xlamBOT-Android--Brawl-Stars--/releases/download/v1.4.17/xlamBOT.apk) · [Что нового](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/updates/#v1417)
+Автоманс и AutoAim доступны бесплатно. BrawlerRules для Шелли и Гаса остаётся в Plus.
+
+[Скачать защищённый APK 1.4.18](https://github.com/Olegu621/xlamBOT-Android--Brawl-Stars--/releases/download/v1.4.18/xlamBOT.apk) · [Что нового](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/updates/#v1418)
 
 Сохранено из 1.2.2:
 

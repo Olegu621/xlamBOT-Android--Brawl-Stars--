@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Public release facts and screenshots; never imports Android sources or logs."""
 
-VERSION = '1.4.17'
+VERSION = '1.4.18'
 DATE = '2026-10-31'
 
 def apply(pages):
@@ -37,6 +37,8 @@ def apply(pages):
         for old,new in replacements.items(): body=body.replace(old,new)
         page['body']=body
     pages['features']['body'] = '<section class="guide-card"><h2>Бесплатно с 1.4.17</h2><p>Автоманс и AutoAim доступны без Plus.</p></section>' + pages['features']['body']
+    blur = '<section id="v1418" class="guide-card"><p>31.10.2026 · Android 1.4.18</p><h2>Исправление размытия игры</h2><p>Плавающая кнопка и панель больше не запрашивают системное размытие фона. Стеклянное оформление внутри панели сохранено. При остановленном боте нажмите ▶ или «Запустить бота».</p><p>Установка, запуск, открытие и закрытие панели проверены на эмуляторе Android 11. На затронутых устройствах исправление ещё нужно подтвердить.</p><p><a href="https://github.com/Olegu621/xlamBOT-Android--Brawl-Stars--/releases/download/v1.4.18/xlamBOT.apk">Скачать APK 1.4.18 →</a></p></section>'
+    pages['updates']['body'] = blur + pages['updates']['body']
     for slug in ('updates', 'features', 'guide-panel', 'guide-gameplay', 'guide-plus', 'en'):
         pages[slug]['modified'] = DATE
 
