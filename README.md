@@ -7,7 +7,7 @@
 Бесплатный Android APK: распознавание экрана, движение, атаки, три стиля игры и очередь бойцов.
 
 [![Android 8+](https://img.shields.io/badge/Android-8%2B-3ddc84?logo=android&logoColor=white)](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/compatibility/)
-[![APK 1.4.10](https://img.shields.io/badge/APK-1.4.10-c4ff52)](https://github.com/Olegu621/xlamBOT-Android--Brawl-Stars--/releases/latest/download/xlamBOT.apk)
+[![APK 1.4.17](https://img.shields.io/badge/APK-1.4.17-c4ff52)](https://github.com/Olegu621/xlamBOT-Android--Brawl-Stars--/releases/latest/download/xlamBOT.apk)
 [![Telegram](https://img.shields.io/badge/Telegram-%40xlamModz-26a5e4?logo=telegram&logoColor=white)](https://t.me/xlamModz)
 [![Website checks](https://github.com/Olegu621/xlamBOT-Android--Brawl-Stars--/actions/workflows/website.yml/badge.svg)](https://github.com/Olegu621/xlamBOT-Android--Brawl-Stars--/actions/workflows/website.yml)
 
@@ -21,15 +21,11 @@
 
 Видео показывает движение и атаки с работающей панелью. Это отдельная запись, а не обещание такого же результата в каждом матче. Игра остаётся видимой; root и постоянно подключённый ПК не нужны.
 
-## Актуальная версия: 1.4.10
+## Актуальная версия: 1.4.17
 
-**BrawlerRules для Гаса (Plus):** дистанция и стрельба на отходе, сохранение видимой цели, безопасное сближение с ослабленным противником, щит себе и помощь команде с ящиками и кубами. При читаемом HUD бот учитывает здоровье и патроны; неясные показания остаются неизвестными. Гаджет работает как раньше.
+Автоманс и AutoAim доступны бесплатно и включаются отдельно в разделе «Поведение». Исправлены сохранение невидимой цели, сохранение патронов Гаса и решения Шелли против группы в финале. BrawlerRules остаётся в Plus.
 
-Выбери Гаса в игре и боте, открой **«Поведение» → BrawlerRules**. При выключении используется прежняя тактика. Правила Шелли и исправления джойстика из 1.4.9 сохранены.
-
-352 автоматических теста, lint, сборка и 5 проверок защиты прошли. На BlueStacks проверены движение, отходы, патроны и переходы между боями. Все отдельные тактические ситуации и все модели телефонов живой проверкой не охвачены.
-
-[**Скачать защищённый APK 1.4.10**](https://github.com/Olegu621/xlamBOT-Android--Brawl-Stars--/releases/download/v1.4.10/xlamBOT.apk) · [Что нового](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/updates/#v1410)
+[Скачать защищённый APK 1.4.17](https://github.com/Olegu621/xlamBOT-Android--Brawl-Stars--/releases/download/v1.4.17/xlamBOT.apk) · [Что нового](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/updates/#v1417)
 
 Сохранено из 1.2.2:
 
@@ -56,9 +52,8 @@
 | Возможность | Free | Plus |
 | --- | :---: | :---: |
 | Движение, атаки, способности; Осторожный / Универсальный / Агрессивный | ✓ | ✓ |
-| Обычный Autododge и уход от газа | ✓ | ✓ |
+| Автоманс, AutoAim и уход от газа | ✓ | ✓ |
 | Очередь, смена после матчей или чистого прироста +N кубков, статистика | ✓ | ✓ |
-| Усиленный Autododge и AutoAim с упреждением | — | ✓ |
 | BrawlerRules, атаковать ящики и собирать кубы усиления | — | ✓ |
 | Быстрая реакция, GPU / NNAPI на поддерживаемых устройствах | — | ✓ |
 | Редкие пины в спокойные моменты | — | ✓ |

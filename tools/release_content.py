@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 """Public release facts and screenshots; never imports Android sources or logs."""
 
-VERSION = '1.4.10'
-DATE = '2026-10-30'
+VERSION = '1.4.17'
+DATE = '2026-10-31'
 
 def apply(pages):
     shots = '''<figure class="guide-shot"><img src="../assets/screens/behavior-v149.webp" width="1099" height="633" alt="BrawlerRules и Autododge в разделе Поведение xlamBOT" loading="lazy"><figcaption>Реальный экран 1.4.9: BrawlerRules для Шелли, уровни Autododge и работа с кубами.</figcaption></figure><figure class="guide-shot"><img src="../assets/screens/game-v149.webp" width="1064" height="601" alt="xlamBOT 1.4.9 играет за Шелли в Тройном столкновении" loading="lazy"><figcaption>Кадр реальной игры на BlueStacks. Это пример работы, а не гарантия результата матча.</figcaption></figure>'''
@@ -16,6 +16,27 @@ def apply(pages):
     for slug in ('features','guide-gameplay','guide-plus'):
         pages[slug]['body'] = '<section class="guide-card"><h2>Гас в BrawlerRules · 1.4.10</h2><p>Дистанция, стрельба на отходе, щит себе и безопасные ящики и кубы. Дополнительные правила Шелли и Гаса включаются через BrawlerRules при активном Plus; при выключении используется обычная тактика. <a href="../updates/#v1410">Подробности обновления →</a></p></section>' + pages[slug]['body']
     pages['en']['body'] = '<section id="v1410" class="guide-card"><h2>xlamBOT 1.4.10 — Gus BrawlerRules</h2><p>Optional Plus tactics for Gus: keep range, retreat after shots, lock visible targets, use self-shields and collect safe objectives. Readable HUD health and ammo guide conservative decisions; uncertain values remain unknown. 352 automated tests and five protection checks passed; live emulator observation covered movement, retreat, ammo and transitions. <a href="../updates/#v1410">Release details →</a></p></section>' + pages['en']['body']
+    latest = '<section id="v1417" class="guide-card"><p>31.10.2026 · Android 1.4.17</p><h2>Бесплатные Автоманс и AutoAim</h2><p>Один переключатель Автоманса и отдельный AutoAim теперь доступны всем. Исправлены память цели, сохранение патронов Гаса и опасные предположения о дуэли. BrawlerRules остаётся в Plus.</p><p><a href="https://github.com/Olegu621/xlamBOT-Android--Brawl-Stars--/releases/download/v1.4.17/xlamBOT.apk">Скачать APK 1.4.17 →</a></p><p>Автоматические тесты и сборка прошли. На эмуляторе проверены движение, атака и переход к следующему бою; замечены отдельные задержки реакции. Работа на разных телефонах отдельно не проверена.</p></section>'
+    pages['updates']['body'] = latest + pages['updates']['body']
+    replacements = {
+        'Autododge: отключён или обычный уровень.':'Автоманс и AutoAim включаются отдельно и доступны бесплатно.',
+        '<li>Усиленный Autododge и AutoAim с упреждением.</li>':'',
+        '<li>Сидеть в кустах, выходить при опасности и менять укрытие при приближении газа.</li>':'',
+        'Normal Autododge and gas avoidance.':'Autododge, predictive AutoAim and gas avoidance.',
+        'Enhanced Autododge, predictive AutoAim, bush mode, power boxes and cubes':'BrawlerRules, power boxes and cubes',
+        '<strong>Autododge</strong> имеет три уровня: <strong>отключён</strong>, <strong>обычный</strong> (Free), <strong>усиленный</strong> (Plus). Регулятор поддерживает нажатие на уровень и перетаскивание. Отключение выключает логику уклонения; без активного Plus усиленный уровень не применяется.':'<strong>Автоманс</strong> включается одним бесплатным переключателем. Отключение выключает логику уклонения.',
+        '<strong>AutoAim</strong> в Plus учитывает движение':'<strong>AutoAim</strong> бесплатно учитывает движение',
+        '<strong>Autododge:</strong> обычный уровень Free, усиленный Plus. Отключённый уровень выключает уклонение. Выбери режим общим регулятором в карточке функции.':'<strong>Автоманс:</strong> бесплатный переключатель включает или выключает уклонение.',
+        'Plus добавляет усиленный Autododge, AutoAim с упреждением, режим кустов, ящики и кубы усиления':'Автоманс и AutoAim доступны бесплатно. Plus добавляет BrawlerRules, ящики и кубы усиления',
+        'обычный Autododge':'Автоманс',
+        'Autododge Free/Plus':'бесплатные Автоманс и AutoAim',
+    }
+    for slug,page in pages.items():
+        if slug == 'updates': continue
+        body=page.get('body','')
+        for old,new in replacements.items(): body=body.replace(old,new)
+        page['body']=body
+    pages['features']['body'] = '<section class="guide-card"><h2>Бесплатно с 1.4.17</h2><p>Автоманс и AutoAim доступны без Plus.</p></section>' + pages['features']['body']
     for slug in ('updates', 'features', 'guide-panel', 'guide-gameplay', 'guide-plus', 'en'):
         pages[slug]['modified'] = DATE
 
