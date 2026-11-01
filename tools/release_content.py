@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Public release facts and screenshots; never imports Android sources or logs."""
 
-VERSION = '1.4.19'
+VERSION = '1.4.20'
 DATE = '2026-11-01'
 
 def apply(pages):
@@ -41,6 +41,8 @@ def apply(pages):
     pages['updates']['body'] = blur + pages['updates']['body']
     bull = '<section id="v1419" class="guide-card"><p>01.11.2026 · Android 1.4.19</p><h2>BrawlerRules для Булла</h2><p>С активным Plus включите BrawlerRules в разделе «Поведение». Булл старается сблизиться для атаки и защищать команду; если враг уже вплотную, продолжает наступать и стрелять. Длинный супер разрешён только после проверки видимого пути.</p><p>Пункт «Уходить от газа» убран из панели; защита остаётся включённой. При проблемах захвата бот повторяет подключение при изменении размера изображения.</p><p><a href="https://github.com/Olegu621/xlamBOT-Android--Brawl-Stars--/releases/download/v1.4.19/xlamBOT.apk">Скачать APK 1.4.19 →</a></p></section>'
     pages['updates']['body'] = bull + pages['updates']['body']
+    current = '<section id="v1420" class="guide-card"><p>01.11.2026 · Android 1.4.20</p><h2>Булл, движение и пины</h2><p>С активной подпиской Plus включите BrawlerRules в разделе «Поведение»: Булл активнее сближается с одиночной целью и продолжает атаковать вплотную. Когда врагов рядом нет, он старается двигаться рядом с союзником. Проверки газа и препятствий сохранены.</p><p>Чтение счётчика команд больше не блокирует игровой цикл. Переработаны выбор и закрытие меню пинов, а промежуток между ними уменьшен в безопасных ситуациях.</p><p><a href="https://github.com/Olegu621/xlamBOT-Android--Brawl-Stars--/releases/download/v1.4.20/xlamBOT.apk">Скачать защищённый APK 1.4.20 →</a></p><p>Прошли 389 автоматических тестов и проверки подписи. На эмуляторе наблюдались бои, переходы и сближение Булла. Встречались отдельные задержки; работу на каждом телефоне и устранение всех причин остановок пока подтвердить нельзя.</p><figure class="guide-shot"><img src="../assets/screens/bull-v1420.webp" width="1280" height="720" alt="Булл после победы команды в xlamBOT 1.4.20" loading="lazy"><figcaption>Результат боя на эмуляторе с установленной 1.4.20.</figcaption></figure></section>'
+    pages['updates']['body'] = current + pages['updates']['body']
     for slug in ('updates', 'features', 'guide-panel', 'guide-gameplay', 'guide-plus', 'en'):
         pages[slug]['modified'] = DATE
 

@@ -7,7 +7,7 @@
 Бесплатный Android APK: распознавание экрана, движение, атаки, три стиля игры и очередь бойцов.
 
 [![Android 8+](https://img.shields.io/badge/Android-8%2B-3ddc84?logo=android&logoColor=white)](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/compatibility/)
-[![APK 1.4.19](https://img.shields.io/badge/APK-1.4.19-c4ff52)](https://github.com/Olegu621/xlamBOT-Android--Brawl-Stars--/releases/latest/download/xlamBOT.apk)
+[![APK 1.4.20](https://img.shields.io/badge/APK-1.4.20-c4ff52)](https://github.com/Olegu621/xlamBOT-Android--Brawl-Stars--/releases/latest/download/xlamBOT.apk)
 [![Telegram](https://img.shields.io/badge/Telegram-%40xlamModz-26a5e4?logo=telegram&logoColor=white)](https://t.me/xlamModz)
 [![Website checks](https://github.com/Olegu621/xlamBOT-Android--Brawl-Stars--/actions/workflows/website.yml/badge.svg)](https://github.com/Olegu621/xlamBOT-Android--Brawl-Stars--/actions/workflows/website.yml)
 
@@ -21,11 +21,11 @@
 
 Видео показывает движение и атаки с работающей панелью. Это отдельная запись, а не обещание такого же результата в каждом матче. Игра остаётся видимой; root и постоянно подключённый ПК не нужны.
 
-## Актуальная версия: 1.4.19
+## Актуальная версия: 1.4.20
 
-BrawlerRules для Булла: ближний бой, поддержка команды и осторожный рывок. Функция включается при активном Plus. Пункт «Уходить от газа» убран из панели, защита остаётся включённой.
+Булл активнее сближается и стреляет с близкого расстояния при включённой BrawlerRules (Plus). Ускорен игровой цикл и переработана отправка пинов. Защита от газа и препятствий сохранена.
 
-[Скачать защищённый APK 1.4.19](https://github.com/Olegu621/xlamBOT-Android--Brawl-Stars--/releases/download/v1.4.19/xlamBOT.apk) · [Что нового](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/updates/#v1419)
+[Скачать защищённый APK 1.4.20](https://github.com/Olegu621/xlamBOT-Android--Brawl-Stars--/releases/download/v1.4.20/xlamBOT.apk) · [Что нового](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/updates/#v1420)
 
 Сохранено из 1.2.2:
 
@@ -56,7 +56,7 @@ BrawlerRules для Булла: ближний бой, поддержка ком
 | Очередь, смена после матчей или чистого прироста +N кубков, статистика | ✓ | ✓ |
 | BrawlerRules, атаковать ящики и собирать кубы усиления | — | ✓ |
 | Быстрая реакция, GPU / NNAPI на поддерживаемых устройствах | — | ✓ |
-| Редкие пины в спокойные моменты | — | ✓ |
+| Пины в спокойные моменты | — | ✓ |
 
 **Plus — 50 Telegram Stars / 30 дней**, продление вручную, без автосписаний. Пробного периода нет. Каждые **5 новых подтверждённых друзей дают 10 дней Plus** пригласившему. Оформление, привязка телефона и рефералка — в [@xlambottt_bot](https://t.me/xlambottt_bot?start=plus). [Условия и инструкция](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/guide-plus/).
 
