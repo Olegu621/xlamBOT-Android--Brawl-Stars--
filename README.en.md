@@ -8,13 +8,11 @@
 
 **[▶ Watch 17 seconds of actual gameplay](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/watch/)** — a recorded example, not a guaranteed result. No root or permanently connected PC is required. Keep Brawl Stars visible.
 
-## Current release: 1.4.18
+## Current release: 1.4.19
 
-The floating controls no longer request system-wide background blur, while the glass panel style remains. Installation and overlay behavior were checked on an Android 11 emulator; affected physical devices still require confirmation.
+Optional Plus BrawlerRules adds close-range team tactics and guarded Super use for Bull. Gas avoidance remains active without a separate panel item.
 
-Autododge and AutoAim remain free; BrawlerRules is available with Plus.
-
-[Download APK 1.4.18](https://github.com/Olegu621/xlamBOT-Android--Brawl-Stars--/releases/download/v1.4.18/xlamBOT.apk) · [Release notes](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/updates/#v1418).
+[Download APK 1.4.19](https://github.com/Olegu621/xlamBOT-Android--Brawl-Stars--/releases/download/v1.4.19/xlamBOT.apk) · [Release notes](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/updates/#v1419).
 
 [▶ Version 1.2.5 playing a real match — a vertical clip without music](docs/assets/promo-125.mp4).
 

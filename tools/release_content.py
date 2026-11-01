@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 """Public release facts and screenshots; never imports Android sources or logs."""
 
-VERSION = '1.4.18'
-DATE = '2026-10-31'
+VERSION = '1.4.19'
+DATE = '2026-11-01'
 
 def apply(pages):
     shots = '''<figure class="guide-shot"><img src="../assets/screens/behavior-v149.webp" width="1099" height="633" alt="BrawlerRules и Autododge в разделе Поведение xlamBOT" loading="lazy"><figcaption>Реальный экран 1.4.9: BrawlerRules для Шелли, уровни Autododge и работа с кубами.</figcaption></figure><figure class="guide-shot"><img src="../assets/screens/game-v149.webp" width="1064" height="601" alt="xlamBOT 1.4.9 играет за Шелли в Тройном столкновении" loading="lazy"><figcaption>Кадр реальной игры на BlueStacks. Это пример работы, а не гарантия результата матча.</figcaption></figure>'''
@@ -39,6 +39,8 @@ def apply(pages):
     pages['features']['body'] = '<section class="guide-card"><h2>Бесплатно с 1.4.17</h2><p>Автоманс и AutoAim доступны без Plus.</p></section>' + pages['features']['body']
     blur = '<section id="v1418" class="guide-card"><p>31.10.2026 · Android 1.4.18</p><h2>Исправление размытия игры</h2><p>Плавающая кнопка и панель больше не запрашивают системное размытие фона. Стеклянное оформление внутри панели сохранено. При остановленном боте нажмите ▶ или «Запустить бота».</p><p>Установка, запуск, открытие и закрытие панели проверены на эмуляторе Android 11. На затронутых устройствах исправление ещё нужно подтвердить.</p><p><a href="https://github.com/Olegu621/xlamBOT-Android--Brawl-Stars--/releases/download/v1.4.18/xlamBOT.apk">Скачать APK 1.4.18 →</a></p></section>'
     pages['updates']['body'] = blur + pages['updates']['body']
+    bull = '<section id="v1419" class="guide-card"><p>01.11.2026 · Android 1.4.19</p><h2>BrawlerRules для Булла</h2><p>С активным Plus включите BrawlerRules в разделе «Поведение». Булл старается сблизиться для атаки и защищать команду; если враг уже вплотную, продолжает наступать и стрелять. Длинный супер разрешён только после проверки видимого пути.</p><p>Пункт «Уходить от газа» убран из панели; защита остаётся включённой. При проблемах захвата бот повторяет подключение при изменении размера изображения.</p><p><a href="https://github.com/Olegu621/xlamBOT-Android--Brawl-Stars--/releases/download/v1.4.19/xlamBOT.apk">Скачать APK 1.4.19 →</a></p></section>'
+    pages['updates']['body'] = bull + pages['updates']['body']
     for slug in ('updates', 'features', 'guide-panel', 'guide-gameplay', 'guide-plus', 'en'):
         pages[slug]['modified'] = DATE
 
