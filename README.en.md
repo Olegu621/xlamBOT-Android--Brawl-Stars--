@@ -8,11 +8,11 @@
 
 **[▶ Watch 17 seconds of actual gameplay](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/watch/)** — a recorded example, not a guaranteed result. No root or permanently connected PC is required. Keep Brawl Stars visible.
 
-## Current release: 1.4.20
+## Current release: 1.4.26
 
-Optional Plus BrawlerRules improves Bull’s close-range approach. Gameplay processing and pin handling were also improved; gas and obstacle safety checks remain active.
+Plus BrawlerRules adds form-aware Bonnie tactics, team positioning and cautious Super use. When her form is uncertain, the bot falls back to its normal tactics.
 
-[Download APK 1.4.20](https://github.com/Olegu621/xlamBOT-Android--Brawl-Stars--/releases/download/v1.4.20/xlamBOT.apk) · [Release notes](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/updates/#v1420).
+[Download APK 1.4.26](https://github.com/Olegu621/xlamBOT-Android--Brawl-Stars--/releases/download/v1.4.26/xlamBOT.apk) · [Release notes](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/updates/#v1426).
 
 [▶ Version 1.2.5 playing a real match — a vertical clip without music](docs/assets/promo-125.mp4).
 
