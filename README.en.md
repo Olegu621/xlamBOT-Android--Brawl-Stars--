@@ -8,11 +8,11 @@
 
 **[▶ Watch 17 seconds of actual gameplay](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/watch/)** — a recorded example, not a guaranteed result. No root or permanently connected PC is required. Keep Brawl Stars visible.
 
-## Current release: 1.4.26
+## Current release: 1.4.29
 
-Plus BrawlerRules adds form-aware Bonnie tactics, team positioning and cautious Super use. When her form is uncertain, the bot falls back to its normal tactics.
+The optional Plus New tactics mode selects reachable targets, manages distance, retreats and regroups with allies. Enabled BrawlerRules take priority for Shelly, Bull, Gus and Bonnie. Match results are not guaranteed.
 
-[Download APK 1.4.26](https://github.com/Olegu621/xlamBOT-Android--Brawl-Stars--/releases/download/v1.4.26/xlamBOT.apk) · [Release notes](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/updates/#v1426).
+[Download APK 1.4.29](https://github.com/Olegu621/xlamBOT-Android--Brawl-Stars--/releases/download/v1.4.29/xlamBOT.apk) · [Release notes](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/updates/#v1429).
 
 [▶ Version 1.2.5 playing a real match — a vertical clip without music](docs/assets/promo-125.mp4).
 
@@ -33,9 +33,9 @@ After updating, switch the Accessibility service off/on and reconnect the image 
 | Feature | Free | Plus |
 | --- | :---: | :---: |
 | Movement, attacks, abilities and three play styles | Yes | Yes |
-| Normal Autododge, gas avoidance, queues and statistics | Yes | Yes |
+| Autododge, predictive AutoAim, gas avoidance, queues and statistics | Yes | Yes |
 | Switch after matches or a net +N trophy gain | Yes | Yes |
-| Enhanced Autododge and optional predictive AutoAim | — | Yes |
+| Experimental New tactics | — | Yes |
 | BrawlerRules, attacking boxes and collecting power cubes | — | Yes |
 | Faster reaction, optional GPU / NNAPI on supported devices | — | Yes |
 | Occasional pins in quiet moments | — | Yes |

@@ -123,7 +123,7 @@ def build():
  version=re.search(r'data-version>([0-9.]+)',home_text).group(1)
  graph={'@context':'https://schema.org','@graph':[
   {'@type':'WebSite','@id':BASE+'#website','url':BASE,'name':'xlamBOT','alternateName':'xlamBOT Android','inLanguage':['ru','en']},
-  {'@type':'WebPage','@id':BASE+'#page','url':BASE,'name':'xlamBOT — бот для Brawl Stars на Android','inLanguage':'ru','dateModified':'2026-11-02','isPartOf':{'@id':BASE+'#website'},'mainEntity':{'@id':BASE+'#app'}},
+  {'@type':'WebPage','@id':BASE+'#page','url':BASE,'name':'xlamBOT — бот для Brawl Stars на Android','inLanguage':'ru','dateModified':'2026-11-05','isPartOf':{'@id':BASE+'#website'},'mainEntity':{'@id':BASE+'#app'}},
   {'@type':'MobileApplication','@id':BASE+'#app','name':'xlamBOT','applicationCategory':'GameApplication','operatingSystem':'Android 8.0 or later','softwareVersion':version,'url':BASE,'downloadUrl':APK,'image':BASE+'assets/social.jpg','screenshot':BASE+'assets/gameplay.webp','releaseNotes':BASE+'updates/','softwareHelp':{'@type':'CreativeWork','url':BASE+'help/'},'creator':{'@type':'Person','name':'Olegu621','url':'https://github.com/Olegu621'},'description':'Бот для Brawl Stars на Android: распознавание экрана, движение, атаки, три стиля и очередь бойцов. Free бесплатен, дополнительные возможности доступны в Plus.','isAccessibleForFree':True,'featureList':['Screen recognition and touch controls','Three play styles','Brawler queues and match statistics','Optional Plus'],'offers':{'@type':'Offer','price':'0','priceCurrency':'USD','description':'Free APK; optional Plus is sold separately in Telegram.'},'sameAs':[REPO,'https://t.me/xlamModz']}
  ]}
  home_text=re.sub(r'<script type="application/ld\+json">.*?</script>',lambda match:'<script type="application/ld+json">'+json.dumps(graph,ensure_ascii=False)+'</script>',home_text,flags=re.S)
@@ -169,7 +169,7 @@ def build():
   (directory/'index.html').write_text(html,encoding='utf-8')
  sitemap='<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">\n'
  for slug in ['',*PAGES]:
-  modified=PAGES[slug].get('modified','2026-10-25') if slug else '2026-10-30'
+  modified=PAGES[slug].get('modified','2026-10-25') if slug else '2026-11-05'
   sitemap+=f'  <url><loc>{BASE}{slug+"/" if slug else ""}</loc><lastmod>{modified}</lastmod>'
   if slug=='watch':
    video=video_schema()
