@@ -176,6 +176,7 @@ def build():
    sitemap+=f'<video:video><video:thumbnail_loc>{video["thumbnailUrl"][0]}</video:thumbnail_loc><video:title>{escape(video["name"])}</video:title><video:description>{escape(video["description"])}</video:description><video:content_loc>{video["contentUrl"]}</video:content_loc><video:duration>17</video:duration></video:video>'
   sitemap+='</url>\n'
  (DOCS/'sitemap.xml').write_text(sitemap+'</urlset>\n',encoding='utf-8')
+ (DOCS/'sitemap.txt').write_text(''.join(BASE+(slug+'/' if slug else '')+'\n' for slug in ['',*PAGES]),encoding='utf-8')
  print(f'Built {len(PAGES)} public guides and video sitemap')
 
 if __name__=='__main__':build()

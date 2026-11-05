@@ -71,6 +71,7 @@ def check():
             if url.fragment and target in pages:assert url.fragment in pages[target].ids,(file,href)
     urls={entry.text for entry in ET.parse(ROOT/'docs/sitemap.xml').findall('.//{*}loc')}
     assert urls=={page.canonical[0] for page in indexed.values()}
+    assert set((ROOT/'docs/sitemap.txt').read_text(encoding='utf-8').splitlines())==urls
     assert len(indexed)==len(PAGES)+1
     for chapter in CHAPTERS:
         manual=pages[(ROOT/'docs'/chapter['slug']/'index.html').resolve()]
