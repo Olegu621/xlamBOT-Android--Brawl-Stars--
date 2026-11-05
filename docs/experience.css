@@ -25,3 +25,27 @@
 .landing .plan-plus,.landing .download-section{background:radial-gradient(ellipse at 15% 0,#fff9,transparent 50%),linear-gradient(135deg,#edffdaf2,#c9ff8be8 55%,#c8b8ffe8);border:1px solid #ffffffa8;box-shadow:inset 0 1px #fff,inset 1px 0 #ffffffb0,0 22px 50px #0005,0 0 55px #c2ff4320}
 .landing .button-lime,.mobile-dock .dock-download{background:linear-gradient(140deg,#f0ffc3,#c2ff55 48%,#9de747);border-color:#efffc9a0;box-shadow:inset 0 1px #fff9,inset 0 -2px #6eac2140,0 7px 24px #a5ff2a2b}.landing .hero-actions .text-button,.mobile-dock,.landing .mobile-menu summary{background:linear-gradient(145deg,#ffffff22,#ffffff07 48%,#b1ff7912),#101914e8;border:1px solid #e8ffdb42;box-shadow:inset 0 1px #ffffff50,0 12px 32px #0007;backdrop-filter:blur(22px) saturate(160%);-webkit-backdrop-filter:blur(22px) saturate(160%)}
 @media(max-width:800px){.landing .tour-tab,.landing .feature,.landing .plan-card,.landing .setup-visual,.landing .release-strip,.landing .quick-links a,.landing .telegram-section,.landing .capture-note{backdrop-filter:none;-webkit-backdrop-filter:none}}
+
+/* The artwork is decorative; the footage remains a genuine recording. */
+.landing{overflow-x:clip}
+.landing .hero{isolation:isolate}
+.landing .hero:before{content:'';position:absolute;z-index:-1;pointer-events:none;inset:-18px -5vw 13%;background:linear-gradient(180deg,#090d0c12 5%,#090d0c9c 76%,#090d0c 100%),url('assets/glass-hero-v2.webp') center top / cover no-repeat;opacity:.76;mask-image:linear-gradient(#000 0%,#000 70%,transparent 100%)}
+.landing .hero-copy{text-shadow:0 2px 28px #000c}
+.landing .hero h1>span:not(.hero-subtitle){background:linear-gradient(110deg,#f7ffde 0%,#c5ff61 42%,#9fee46 100%);background-clip:text;-webkit-background-clip:text;color:transparent;text-shadow:none;filter:drop-shadow(0 0 35px #a8ff4d35)}
+.landing .hero-stage{border-radius:28px;background:linear-gradient(135deg,#ffffff24,#ffffff07 45%,#a275ff17),#0c120fed;border:1px solid #eaffd03b;box-shadow:inset 0 1px #ffffff66,0 36px 90px #000a,0 0 85px #a7ff3f1c;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+.landing .game-window{outline:1px solid #ffffff2c;box-shadow:0 18px 38px #0008}
+.landing .play-circle{background:linear-gradient(145deg,#f5ffd4,#b9ff58);box-shadow:0 0 0 11px #d9ff7130,0 0 45px #bdff7770}
+.landing .hero-actions .button,.landing .hero-actions .text-button{border-radius:999px}
+@media(max-width:800px){
+ .landing .hero{gap:19px;padding-top:25px}
+ .landing .hero:before{inset:-2px -16px 26%;background-position:center top;background-size:auto 100%;opacity:.65}
+ .landing .hero .eyebrow{margin-bottom:18px}
+ .landing .hero h1{font-size:clamp(35px,9.8vw,60px);margin-bottom:13px}
+ .landing .hero h1 .hero-subtitle{margin-top:9px;font-size:14px}
+ .landing .hero-text{margin-bottom:18px;font-size:14px;line-height:1.55}
+ .landing .hero-actions{grid-template-columns:1fr 1fr;gap:8px}
+ .landing .hero-actions .button,.landing .hero-actions .text-button{min-height:48px;padding:10px 8px;font-size:11px;gap:7px}
+ .landing .hero-note{margin-top:10px}
+ .landing .hero-stage{padding:12px;border-radius:20px;backdrop-filter:none;-webkit-backdrop-filter:none}
+}
+@media(max-width:360px){.landing .hero-actions{grid-template-columns:1fr 1fr}.landing .hero h1{font-size:30px;letter-spacing:-1.8px}.landing .hero-actions .button,.landing .hero-actions .text-button{font-size:10px}}
