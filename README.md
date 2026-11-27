@@ -7,7 +7,7 @@
 Бесплатный Android APK: распознавание экрана, движение, атаки, три стиля игры и очередь бойцов.
 
 [![Android 8+](https://img.shields.io/badge/Android-8%2B-3ddc84?logo=android&logoColor=white)](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/compatibility/)
-[![APK 1.4.54](https://img.shields.io/badge/APK-1.4.54-c4ff52)](https://github.com/Olegu621/xlamBOT-Android--Brawl-Stars--/releases/latest/download/xlamBOT.apk)
+[![APK 1.4.57](https://img.shields.io/badge/APK-1.4.57-c4ff52)](https://github.com/Olegu621/xlamBOT-Android--Brawl-Stars--/releases/latest/download/xlamBOT.apk)
 [![Telegram](https://img.shields.io/badge/Telegram-%40xlamModz-26a5e4?logo=telegram&logoColor=white)](https://t.me/xlamModz)
 [![Website checks](https://github.com/Olegu621/xlamBOT-Android--Brawl-Stars--/actions/workflows/website.yml/badge.svg)](https://github.com/Olegu621/xlamBOT-Android--Brawl-Stars--/actions/workflows/website.yml)
 
@@ -21,13 +21,13 @@
 
 Видео показывает движение и атаки с работающей панелью. Это отдельная запись, а не обещание такого же результата в каждом матче. Игра остаётся видимой; root и постоянно подключённый ПК не нужны.
 
-## Актуальная версия: 1.4.54
+## Актуальная версия: 1.4.57
 
-Исправлено распознавание отключения и экранов результата с кнопками EXIT и PROCEED.
+Исправлены зависания на экране нового бойца и в сводке наград. Бот распознаёт отсчёт и отличает настоящее облако газа от кольца под бойцом.
 
 «Новая тактика» для Plus помогает выбирать доступную цель, держать дистанцию, отступать и возвращаться к союзникам. Включите её в разделе «Поведение». Для Шелли, Булла, Гаса и Бонни включённые BrawlerRules имеют приоритет. Экспериментальная функция не гарантирует результат.
 
-[Скачать APK 1.4.54](https://github.com/Olegu621/xlamBOT-Android--Brawl-Stars--/releases/download/v1.4.54/xlamBOT.apk) · [Что нового](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/updates/#v1454)
+[Скачать APK 1.4.57](https://github.com/Olegu621/xlamBOT-Android--Brawl-Stars--/releases/download/v1.4.57/xlamBOT.apk) · [Что нового](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/updates/#v1457)
 
 Сохранено из 1.2.2:
 

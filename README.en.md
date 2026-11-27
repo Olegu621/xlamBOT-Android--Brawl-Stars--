@@ -8,13 +8,13 @@
 
 **[▶ Watch 17 seconds of actual gameplay](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/watch/)** — a recorded example, not a guaranteed result. No root or permanently connected PC is required. Keep Brawl Stars visible.
 
-## Current release: 1.4.54
+## Current release: 1.4.57
 
-Improved recognition of disconnect dialogs and result screens with EXIT or PROCEED.
+Fixed stalls on the brawler unlock screen and reward summary. The bot recognizes the match countdown and distinguishes the brawler’s green ring from actual gas.
 
 The optional Plus New tactics mode selects reachable targets, manages distance, retreats and regroups with allies. Enabled BrawlerRules take priority for Shelly, Bull, Gus and Bonnie. Match results are not guaranteed.
 
-[Download APK 1.4.54](https://github.com/Olegu621/xlamBOT-Android--Brawl-Stars--/releases/download/v1.4.54/xlamBOT.apk) · [Release notes](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/updates/#v1454).
+[Download APK 1.4.57](https://github.com/Olegu621/xlamBOT-Android--Brawl-Stars--/releases/download/v1.4.57/xlamBOT.apk) · [Release notes](https://olegu621.github.io/xlamBOT-Android--Brawl-Stars--/updates/#v1457).
 
 [▶ Version 1.2.5 playing a real match — a vertical clip without music](docs/assets/promo-125.mp4).
 
